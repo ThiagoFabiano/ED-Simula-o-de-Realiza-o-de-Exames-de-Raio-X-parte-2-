@@ -4,7 +4,6 @@
 #include <time.h>
 #include "patient.h"
 
-/* teste */
 
 Patient* create_patient(int id, const char *name, struct tm *timestamp) {
     Patient *new_patient = (Patient*)malloc(sizeof(Patient));
