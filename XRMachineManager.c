@@ -1,17 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "patient.h"
 #include "PatientQueue.h"
+#include "XRMachineManager.h"
 
-#define TOTAL_MAQUINAS 5
-
-
-typedef struct {
-  int id_maquina[TOTAL_MAQUINAS];
-  int status_maquina[TOTAL_MAQUINAS];
-  Patient* paciente_maquina[TOTAL_MAQUINAS];
-}MachineManager;
 
 MachineManager* criar_XRManager() {
 MachineManager* gerenciador = (MachineManager*)malloc(sizeof( MachineManager));
