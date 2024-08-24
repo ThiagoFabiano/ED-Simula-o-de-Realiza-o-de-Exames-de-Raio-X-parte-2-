@@ -18,7 +18,7 @@ struct queue_node
 };
 
 //Criar fila
-Queue create_queue()
+Queue create_queue_patient()
 {
   Queue *q = (Queue *)malloc(sizeof(Queue)); 
    q->inicio = q->final = NULL;                 
@@ -26,7 +26,7 @@ Queue create_queue()
 }
 
 //Liberar a memória da fila
-void q_free(Queue *q)
+void q_free_patient(Queue *q)
 {
    QueueNode *p = q->inicio;
    while (p != NULL)
@@ -39,7 +39,7 @@ void q_free(Queue *q)
 }
 
 //verificar se a fila esta vazia
-int q_is_empty(Queue *q)
+int q_is_empty_patient(Queue *q)
 {
    return q->inicio == NULL;
 }
@@ -60,7 +60,7 @@ Patient* enqueue_patient(Queue *q, Patient *p)
 }
 
 //Remove e retorna o primeiro paciente da fila
-Patient* q_dequeue(Queue *q)
+Patient* q_dequeue_patient(Queue *q)
 {
    assert(!q_is_empty(q));
 
@@ -77,7 +77,7 @@ Patient* q_dequeue(Queue *q)
 }
 
 
-void q_print(Queue *q) {
+void q_print_patient(Queue *q) {
    for (QueueNode *node = q->inicio; node != NULL; node = node->next) {
       char time_buffer[80]; // Buffer for formatted time string
       strftime(time_buffer, sizeof(time_buffer), "%Y-%m-%d %H:%M:%S", node->patient->timestamp); // Format time
@@ -86,7 +86,3 @@ void q_print(Queue *q) {
    }
    printf("\n");
 }
-
-
-
-
