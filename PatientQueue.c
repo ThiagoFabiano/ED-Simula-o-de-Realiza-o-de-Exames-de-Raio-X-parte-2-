@@ -5,24 +5,14 @@
 #include <time.h>
 #include "patient.h"
 
-struct queue
-{
-   QueueNode *inicio; // Pointer to the front of the queue.
-   QueueNode *final;  // Pointer to the rear of the queue.
-};
-//struct queue_node
-struct queue_node
-{
-   Patient *patient;      
-   QueueNode *next; 
-};
+  
 
 //Criar fila
-Queue create_queue_patient()
+Queue* create_queue_patient()
 {
   Queue *q = (Queue *)malloc(sizeof(Queue)); 
    q->inicio = q->final = NULL;                 
-   return *q;
+   return q;
 }
 
 //Liberar a memória da fila
@@ -51,7 +41,7 @@ Patient* enqueue_patient(Queue *q, Patient *p)
    node->patient = p;
    node->next = NULL;
 
-   if (q_is_empty(q))
+   if (q_is_empty_patient(q))
       q->inicio = node;
    else
       q->final->next = node;
@@ -62,7 +52,7 @@ Patient* enqueue_patient(Queue *q, Patient *p)
 //Remove e retorna o primeiro paciente da fila
 Patient* q_dequeue_patient(Queue *q)
 {
-   assert(!q_is_empty(q));
+   assert(!q_is_empty_patient(q));
 
    Patient *p = q->inicio->patient;
    QueueNode *node = q->inicio; // Store for removal

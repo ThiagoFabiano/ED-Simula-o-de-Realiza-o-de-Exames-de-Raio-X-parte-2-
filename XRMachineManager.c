@@ -16,8 +16,8 @@ MachineManager* gerenciador = (MachineManager*)malloc(sizeof( MachineManager));
 }
 
 int alocar_paciente(MachineManager* gerenciador, Queue* patientQueue){
-  while (!q_is_empty(patientQueue)) {  // Continuar enquanto houver pacientes na fila
-  Patient* patient = q_dequeue(patientQueue);
+  while (!q_is_empty_patient(patientQueue)) {  // Continuar enquanto houver pacientes na fila
+  Patient* patient = q_dequeue_patient(patientQueue);
   
   while(1){//fica até uma maquina ser desocupada
     for (int i=0; i<TOTAL_MAQUINAS; i++) 

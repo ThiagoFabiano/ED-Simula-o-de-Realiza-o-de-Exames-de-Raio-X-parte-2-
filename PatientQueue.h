@@ -3,11 +3,23 @@
 #include "patient.h"
 
 
-typedef struct queue Queue;          
 typedef struct queue_node QueueNode;
+typedef struct queue Queue;      
+
+//struct queue_node
+struct queue_node
+{
+   Patient *patient;      
+   QueueNode *next; 
+};
+struct queue
+{
+   QueueNode *inicio; // Pointer to the front of the queue.
+   QueueNode *final;  // Pointer to the rear of the queue.
+};
 
 //Criar fila
-Queue create_queue_patient();
+Queue* create_queue_patient();
 
 //Liberar a memória da fila
 void q_free_patient(Queue *q);

@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
+#include "PatientQueue.h"
 #include "patient.h"
+#include "XRMachineManager.h"
 
 typedef struct {
     const char *nome;
@@ -62,20 +64,25 @@ int main() {
     int probabilidade;
     srand(time(NULL));
 
+    int unidadeDeTempo = 500;
+
 
     while (1) {  
         struct tm timestamp;
         time_t t = time(NULL);
         probabilidade = rand() % 100;
+        Queue* q = create_queue_patient();
 
         if(probabilidade < 20){
             timestamp = *localtime(&t);
-            Patient* p = create_patient(1, "John Doe", &timestamp);
-            printf("%d\n",get_patient_horario_chegada(p)); 
+            Patient* paciente = create_patient(1, "John Doe", &timestamp); 
+            enqueue_patient(q, paciente);
+            q_print_patient(q);
+
         } else {
             printf("Nao chama paciente\n"); 
         };
-        Sleep(500);  
+        Sleep(unidadeDeTempo);  
     }
 
     return 0;
