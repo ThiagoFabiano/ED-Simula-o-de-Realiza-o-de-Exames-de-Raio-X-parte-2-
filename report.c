@@ -6,6 +6,8 @@
 #include "ExamPriorityQueue.h"
 #include "report.h"
 
+static int id_laudo = 1;
+
 const char* determinar_condicao(Exam *exame) 
 {
     double p = (double)rand() / RAND_MAX;
@@ -39,7 +41,7 @@ Report* criar_laudo(Queue *fila_exames) {
         return NULL;
     }
 
-    laudo->id = rand();  
+    laudo->id = id_laudo++; 
     laudo->exam_id = exame->id;
     laudo->patient_id = exame->patient_id;
     laudo->condition = determinar_condicao(exame);
