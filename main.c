@@ -35,8 +35,10 @@ void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* 
 }
 
 void realizarExames(MachineManager* gerenciadorDeMaquinas, Queue* filaDePacientes, QueueExam* filaDeExamesPorPrioridade, int tempoSimulacao) {
+    if(!q_is_empty_patient(filaDePacientes)){
+        Paciente_Maquina pacienteMaquina = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes, tempoSimulacao);
+    }
 
-    Paciente_Maquina pacienteMaquina = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes, tempoSimulacao);
     liberar_maquina(gerenciadorDeMaquinas, tempoSimulacao, filaDeExamesPorPrioridade); // ADICIONAR COMO PARAMETRO ESSES TREM DEBAIXO E COLOCAR NO .H  
     
 }

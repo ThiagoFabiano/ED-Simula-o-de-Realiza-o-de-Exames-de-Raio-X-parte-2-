@@ -19,14 +19,13 @@ MachineManager* gerenciador = (MachineManager*)malloc(sizeof( MachineManager));
 
 Paciente_Maquina alocar_paciente(MachineManager* gerenciador, Queue* patientQueue, int tempo_inicio_exame){
   Paciente_Maquina estrutura;
-  while (!q_is_empty_patient(patientQueue)) {  // Continuar enquanto houver pacientes na fila
-    Patient* patient = q_dequeue_patient(patientQueue);
 
   
     for (int i=0; i<TOTAL_MAQUINAS; i++) 
         {
           if(gerenciador->status_maquina[i] == 0)
           { // ADICIONADO
+            Patient* patient = q_dequeue_patient(patientQueue);
             gerenciador->status_maquina[i] = 1;
             gerenciador->paciente_maquina[i] = patient;
             gerenciador->tempo_inicio_exame[i] = tempo_inicio_exame;
@@ -38,7 +37,7 @@ Paciente_Maquina alocar_paciente(MachineManager* gerenciador, Queue* patientQueu
           }
         }
      
-  }
+  
 }
 
 void liberar_maquina(MachineManager* gerenciador, int tempoSimulacao, QueueExam* filaDeExamesPorPrioridade)
