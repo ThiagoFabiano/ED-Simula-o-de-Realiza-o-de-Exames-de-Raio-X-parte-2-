@@ -25,7 +25,7 @@ int q_is_empty_exam(Queue *q);
 
 Exam* enqueue_exam(Queue *q, Exam *e);
 
-Exam* q_dequeue_exam(Queue *q);
+Exam* dequeue_exam(Queue *q);
 
 void q_print_exam(Queue *q);
 
