@@ -5560,3 +5560,15 @@ ID do paciente: 927
 Diagnóstico da IA: Bronquite
 Horário do exame: Sun Aug 25 10:58:13 2024
 -------------------------
+ID do exame: 928
+ID da máquina: 1
+ID do paciente: 928
+Diagnóstico da IA: COVID
+Horário do exame: Sun Aug 25 10:58:20 2024
+-------------------------
+ID do exame: 929
+ID da máquina: 1
+ID do paciente: 929
+Diagnóstico da IA: Câncer de pulmao
+Horário do exame: Sun Aug 25 10:58:22 2024
+-------------------------
