@@ -21,7 +21,7 @@ void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* 
     probabilidade = rand() % 100;
     
 
-    if(probabilidade < 20){
+    if(probabilidade < 101){
         printf("CHAMOU\n");
         sprintf(nomePaciente, "Maria %d", *id);
         timestamp = *localtime(&t);
@@ -66,9 +66,12 @@ int main() {
         printf("%d\n",tempoSimulacao);
         enfileirarPacientes(probabilidade, nomePaciente, &id, filaDePacientes);
 
-        if ((tempoSimulacao % TEMPO_EXAME == 0) && (tempoSimulacao >= TEMPO_EXAME) && (!q_is_empty_patient(filaDePacientes))) {
-            realizarExames( gerenciadorDeMaquinas,filaDePacientes, filaDeExamesPorPrioridade);
-        };
+        if (tempoSimulacao % UNIDADE_DE_TEMPO == 0) {
+            // Verifica se há pacientes na fila e máquinas disponíveis
+            while (!q_is_empty_patient(filaDePacientes) && tempoSimulacao % TEMPO_EXAME < TEMPO_EXAME) {
+                realizarExames(gerenciadorDeMaquinas, filaDePacientes, filaDeExamesPorPrioridade);
+            }
+        }
 
         if((!q_is_empty_exam(filaDeExamesPorPrioridade)) && (tempoSimulacao - tempoQueExecutouOUltimoLaudo >= TEMPO_LAUDO)){
             tempoQueExecutouOUltimoLaudo = tempoSimulacao;
