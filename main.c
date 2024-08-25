@@ -37,9 +37,7 @@ void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* 
 void realizarExames(MachineManager* gerenciadorDeMaquinas, Queue* filaDePacientes, QueueExam* filaDeExamesPorPrioridade, int tempoSimulacao) {
 
     Paciente_Maquina pacienteMaquina = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes, tempoSimulacao);
-    liberar_maquina(gerenciadorDeMaquinas, tempoSimulacao);
-    /* Exam *exame = realizar_exame(pacienteMaquina.maquina_id, pacienteMaquina.paciente_id);
-    enqueue_exam(filaDeExamesPorPrioridade, exame); */
+    liberar_maquina(gerenciadorDeMaquinas, tempoSimulacao, filaDeExamesPorPrioridade); // ADICIONAR COMO PARAMETRO ESSES TREM DEBAIXO E COLOCAR NO .H  
     
 }
 

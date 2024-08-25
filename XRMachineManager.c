@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include "PatientQueue.h"
 #include "XRMachineManager.h"
+#include "exam.h"
+#include "ExamPriorityQueue.h"
 
 
 MachineManager* criar_XRManager() {
@@ -39,15 +41,17 @@ Paciente_Maquina alocar_paciente(MachineManager* gerenciador, Queue* patientQueu
   }
 }
 
-void liberar_maquina(MachineManager* gerenciador, int tempoSimulacao)
+void liberar_maquina(MachineManager* gerenciador, int tempoSimulacao, QueueExam* filaDeExamesPorPrioridade)
 {
   for (int i=0; i<TOTAL_MAQUINAS; i++) 
   {
     if(gerenciador->status_maquina[i] == 1 && (tempoSimulacao - gerenciador->tempo_inicio_exame[i]) >= TEMPO_EXAME){
-      printf("teste2");
+      Exam *exame = realizar_exame(gerenciador->id_maquina[i], gerenciador->paciente_maquina[i]->id);
+      enqueue_exam(filaDeExamesPorPrioridade, exame);
       gerenciador->status_maquina[i] = 0;
       gerenciador->paciente_maquina[i] = NULL;
-      printf("Desalocou na maquina %d\n", i); 
+      printf("Desalocou na maquina %d\n", i);
+
       break;  
     }
   }

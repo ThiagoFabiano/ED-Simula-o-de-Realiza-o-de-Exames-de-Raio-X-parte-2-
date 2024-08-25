@@ -1,6 +1,8 @@
 #ifndef XRMACHINEMANAGER_H
 #define XRMACHINEMANAGER_H
 #include "PatientQueue.h"
+#include "exam.h"
+#include "ExamPriorityQueue.h"
 
 
 #define TOTAL_MAQUINAS 5
@@ -25,6 +27,6 @@ MachineManager* criar_XRManager();
 Paciente_Maquina alocar_paciente(MachineManager* gerenciador, Queue* patientQueue, int tempo_inicio_exame);
 
 //liberar maquina ocupada
-void liberar_maquina(MachineManager* gerenciador, int tempoSimulacao);
+void liberar_maquina(MachineManager* gerenciador, int tempoSimulacao, QueueExam* filaDeExamesPorPrioridade);
 
 #endif
