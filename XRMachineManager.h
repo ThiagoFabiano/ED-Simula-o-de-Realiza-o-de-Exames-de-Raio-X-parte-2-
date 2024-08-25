@@ -6,6 +6,11 @@
 #define TOTAL_MAQUINAS 5
 
 typedef struct {
+int paciente_id;
+int maquina_id;
+}Paciente_Maquina;
+
+typedef struct {
   int id_maquina[TOTAL_MAQUINAS];
   int status_maquina[TOTAL_MAQUINAS];
   Patient* paciente_maquina[TOTAL_MAQUINAS];
@@ -15,7 +20,7 @@ typedef struct {
 MachineManager* criar_XRManager();
 
 //alocar primeiro paciente da fila em uma maquina desocupada
-int alocar_paciente(MachineManager* gerenciador, Queue* patientQueue);
+Paciente_Maquina alocar_paciente(MachineManager* gerenciador, Queue* patientQueue);
 
 //liberar maquina ocupada
 void liberar_maquina(MachineManager* gerenciador, int id_maquina);
