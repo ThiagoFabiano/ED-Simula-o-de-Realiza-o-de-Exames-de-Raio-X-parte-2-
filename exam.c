@@ -7,14 +7,14 @@
 
 static int id_exam = 1;
 
-typedef struct exam {
+ struct exam {
   int id;
   int id_rx;
   int patient_id;
   const char *condition_IA;
   int nivel_gravidade;
   struct tm timestamp;
-} Exam;
+};
 
 Exam *realizar_exame(int id_rx, int patient_id) {
   const char *condition_IA;
