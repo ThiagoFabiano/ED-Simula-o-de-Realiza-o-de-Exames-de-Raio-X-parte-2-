@@ -35,31 +35,24 @@ int q_is_empty_exam(QueueExam *q)
 //Adicionar exame na fila
 Exam* enqueue_exam(QueueExam *q, Exam *e)
 {
-   QueueNodeExam *node = (QueueNodeExam *)malloc(sizeof(QueueNodeExam)); // aloca a memoria para o no de um exame
-   printf("Aqui 5\n");
+  QueueNodeExam *node = (QueueNodeExam *)malloc(sizeof(QueueNodeExam)); // aloca a memoria para o no de um exame
    node->exam = e;
-   printf("Aqui 6\n");
    node->next = NULL;
-   printf("Aqui 7\n");
 
    if (q->inicio == NULL || q->inicio->exam->nivel_gravidade < e->nivel_gravidade) 
    {
-       printf("Aqui 8\n");
       node->next=q->inicio;
-       printf("Aqui 9\n");
       q->inicio = node;
-       printf("Aqui 10\n");
-   } else {
-       printf("Aqui 11\n");
+   }
+
+   else 
+   {
       QueueNodeExam *current = q->inicio;
 
       while (current->next != NULL && current->next->exam->nivel_gravidade >= e->nivel_gravidade) {
-          printf("Aqui 14\n");
          current = current->next;
-          printf("Aqui 15\n");
       }
       node->next = current->next;
-       printf("Aqui 16\n");
       current->next = node;
      
      if (current->next==NULL)
