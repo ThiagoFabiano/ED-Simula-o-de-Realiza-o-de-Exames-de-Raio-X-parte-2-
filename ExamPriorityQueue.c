@@ -59,7 +59,7 @@ Exam* enqueue_exam(Queue *q, Exam *e)
 }
 
 //Remove e retorna o primeiro exame da fila
-Exam* exam_dequeue(Queue *q)
+Exam* dequeue_exam(Queue *q)
 {
    if (q_is_empty_exam(q)) {
         return NULL;
