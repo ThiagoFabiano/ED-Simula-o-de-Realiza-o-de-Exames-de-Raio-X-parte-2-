@@ -916,3 +916,27 @@ ID do paciente: 153
 Diagnóstico da IA: COVID
 Horário do exame: Sun Aug 25 10:25:47 2024
 -------------------------
+ID do exame: 154
+ID da máquina: 1
+ID do paciente: 154
+Diagnóstico da IA: COVID
+Horário do exame: Sun Aug 25 10:25:51 2024
+-------------------------
+ID do exame: 155
+ID da máquina: 1
+ID do paciente: 155
+Diagnóstico da IA: Bronquite
+Horário do exame: Sun Aug 25 10:25:55 2024
+-------------------------
+ID do exame: 156
+ID da máquina: 1
+ID do paciente: 156
+Diagnóstico da IA: Embolia pulmonar
+Horário do exame: Sun Aug 25 10:25:56 2024
+-------------------------
+ID do exame: 157
+ID da máquina: 1
+ID do paciente: 157
+Diagnóstico da IA: Saude Normal
+Horário do exame: Sun Aug 25 10:25:59 2024
+-------------------------
