@@ -27,8 +27,8 @@ const char* determinar_condicao(Exam *exame)
     }
 }
 
-Report* criar_laudo(QueueExam *fila_exames) {
-    Exam *exame = dequeue_exam(fila_exames);
+Report* criar_laudo(QueueExam *fila_exames,int tempoSimulacao) {
+    Exam *exame = dequeue_exam(fila_exames, tempoSimulacao);
 
     if (exame == NULL) {
         printf("Nenhum exame disponível na fila para a realização do laudo.\n");

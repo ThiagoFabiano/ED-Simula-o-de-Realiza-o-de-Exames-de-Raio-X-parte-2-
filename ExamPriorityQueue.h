@@ -23,10 +23,12 @@ void q_free_exam(QueueExam *q);
 
 int q_is_empty_exam(QueueExam *q);
 
-Exam* enqueue_exam(QueueExam *q, Exam *e);
+Exam* enqueue_exam(QueueExam *q, Exam *e, int tempoSimulacao);
 
-Exam* dequeue_exam(QueueExam *q);
+Exam* dequeue_exam(QueueExam *q, int tempoSimulacao);
 
 void q_print_exam(QueueExam *q);
+
+int get_time_first_to_last();
 
 #endif

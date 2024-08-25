@@ -5,6 +5,9 @@
 #include <time.h>
 #include "exam.h"
 
+int tempo_que_o_primeiro_entrou_na_fila = 0;
+int tempo_que_ultimo_entrou_na_fila = 0;
+
 //Criar fila
 QueueExam* create_queue_exam()
 {
@@ -21,7 +24,7 @@ void q_free_exam(QueueExam *q)
    {
       QueueNodeExam *t = p->next; 
       free(p);                
-      p = t;                  
+      p = t;               
    }
    free(q); 
 }
@@ -33,19 +36,21 @@ int q_is_empty_exam(QueueExam *q)
 }
 
 //Adicionar exame na fila
-Exam* enqueue_exam(QueueExam *q, Exam *e)
+Exam* enqueue_exam(QueueExam *q, Exam *e, int tempoSimulacao)
 {
   QueueNodeExam *node = (QueueNodeExam *)malloc(sizeof(QueueNodeExam)); // aloca a memoria para o no de um exame
    node->exam = e;
    node->next = NULL;
 
+   if(tempo_que_o_primeiro_entrou_na_fila == 0){
+      tempo_que_o_primeiro_entrou_na_fila = tempoSimulacao;
+   };
+
    if (q->inicio == NULL || q->inicio->exam->nivel_gravidade < e->nivel_gravidade) 
    {
       node->next=q->inicio;
       q->inicio = node;
-   }
-
-   else {
+   } else {
       QueueNodeExam *current = q->inicio;
 
       while (current->next != NULL && current->next->exam->nivel_gravidade >= e->nivel_gravidade) 
@@ -57,12 +62,12 @@ Exam* enqueue_exam(QueueExam *q, Exam *e)
 
       if (node->next == NULL) {
          q->final = node;
-      }
-   }
+      };
+   };
 }
 
 //Remove e retorna o primeiro exame da fila
-Exam* dequeue_exam(QueueExam *q)
+Exam* dequeue_exam(QueueExam *q,  int tempoSimulacao)
 {
    if (q_is_empty_exam(q)) {
         return NULL;
@@ -77,6 +82,8 @@ Exam* dequeue_exam(QueueExam *q)
         q->final = NULL;
     }
     free(prioridade);
+
+    tempo_que_ultimo_entrou_na_fila =  tempoSimulacao;
 
     return exam;
 }
@@ -93,3 +100,7 @@ void q_print_exam(QueueExam *q) {
     }
     printf("\n");
 }
+
+int get_time_first_to_last(){
+   return tempo_que_ultimo_entrou_na_fila - tempo_que_o_primeiro_entrou_na_fila;
+};

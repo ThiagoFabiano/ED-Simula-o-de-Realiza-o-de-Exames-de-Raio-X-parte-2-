@@ -1,300 +1,54 @@
-ID do exame: 1
+ID do exame: 121
 ID da máquina: 1
-ID do paciente: 1
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:17 2024
--------------------------
-ID do exame: 2
-ID da máquina: 2
-ID do paciente: 2
+ID do paciente: 121
 Diagnóstico da IA: Bronquite
-Horário do exame: Sun Aug 25 17:57:18 2024
+Horário do exame: Sun Aug 25 20:16:05 2024
 -------------------------
-ID do exame: 3
-ID da máquina: 3
-ID do paciente: 3
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:19 2024
--------------------------
-ID do exame: 4
-ID da máquina: 4
-ID do paciente: 4
-Diagnóstico da IA: Bronquite
-Horário do exame: Sun Aug 25 17:57:20 2024
--------------------------
-ID do exame: 5
-ID da máquina: 5
-ID do paciente: 5
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:21 2024
--------------------------
-ID do exame: 6
-ID da máquina: 1
-ID do paciente: 6
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:28 2024
--------------------------
-ID do exame: 7
+ID do exame: 122
 ID da máquina: 2
-ID do paciente: 7
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:29 2024
--------------------------
-ID do exame: 8
-ID da máquina: 3
-ID do paciente: 8
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:30 2024
--------------------------
-ID do exame: 9
-ID da máquina: 4
-ID do paciente: 9
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:31 2024
--------------------------
-ID do exame: 10
-ID da máquina: 5
-ID do paciente: 10
-Diagnóstico da IA: Bronquite
-Horário do exame: Sun Aug 25 17:57:32 2024
--------------------------
-ID do exame: 11
-ID da máquina: 1
-ID do paciente: 11
-Diagnóstico da IA: COVID
-Horário do exame: Sun Aug 25 17:57:39 2024
--------------------------
-ID do exame: 12
-ID da máquina: 2
-ID do paciente: 12
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:40 2024
--------------------------
-ID do exame: 13
-ID da máquina: 3
-ID do paciente: 13
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:41 2024
--------------------------
-ID do exame: 14
-ID da máquina: 4
-ID do paciente: 14
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:43 2024
--------------------------
-ID do exame: 15
-ID da máquina: 5
-ID do paciente: 15
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:44 2024
--------------------------
-ID do exame: 16
-ID da máquina: 1
-ID do paciente: 16
-Diagnóstico da IA: Bronquite
-Horário do exame: Sun Aug 25 17:57:51 2024
--------------------------
-ID do exame: 17
-ID da máquina: 2
-ID do paciente: 17
-Diagnóstico da IA: Fibrose pulmonar
-Horário do exame: Sun Aug 25 17:57:52 2024
--------------------------
-ID do exame: 18
-ID da máquina: 3
-ID do paciente: 18
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:57:53 2024
--------------------------
-ID do exame: 19
-ID da máquina: 4
-ID do paciente: 19
+ID do paciente: 122
 Diagnóstico da IA: Derrame pleural
-Horário do exame: Sun Aug 25 17:57:54 2024
+Horário do exame: Sun Aug 25 20:16:06 2024
 -------------------------
-ID do exame: 20
-ID da máquina: 5
-ID do paciente: 20
+ID do exame: 123
+ID da máquina: 3
+ID do paciente: 123
 Diagnóstico da IA: Bronquite
-Horário do exame: Sun Aug 25 17:57:55 2024
+Horário do exame: Sun Aug 25 20:16:07 2024
 -------------------------
-ID do exame: 21
-ID da máquina: 1
-ID do paciente: 21
+ID do exame: 124
+ID da máquina: 4
+ID do paciente: 124
 Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:58:02 2024
+Horário do exame: Sun Aug 25 20:16:08 2024
 -------------------------
-ID do exame: 22
-ID da máquina: 2
-ID do paciente: 22
+ID do exame: 125
+ID da máquina: 5
+ID do paciente: 125
 Diagnóstico da IA: Bronquite
-Horário do exame: Sun Aug 25 17:58:03 2024
+Horário do exame: Sun Aug 25 20:16:09 2024
 -------------------------
-ID do exame: 23
-ID da máquina: 3
-ID do paciente: 23
-Diagnóstico da IA: Derrame pleural
-Horário do exame: Sun Aug 25 17:58:04 2024
--------------------------
-ID do exame: 24
-ID da máquina: 4
-ID do paciente: 24
-Diagnóstico da IA: Embolia pulmonar
-Horário do exame: Sun Aug 25 17:58:05 2024
--------------------------
-ID do exame: 25
-ID da máquina: 5
-ID do paciente: 25
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 17:58:06 2024
--------------------------
-ID do exame: 1
+ID do exame: 126
 ID da máquina: 1
-ID do paciente: 1
-Diagnóstico da IA: Pneumonia
-Horário do exame: Sun Aug 25 18:03:38 2024
+ID do paciente: 126
+Diagnóstico da IA: Saude Normal
+Horário do exame: Sun Aug 25 20:16:16 2024
 -------------------------
-ID do exame: 2
+ID do exame: 127
 ID da máquina: 2
-ID do paciente: 2
-Diagnóstico da IA: Derrame pleural
-Horário do exame: Sun Aug 25 18:03:39 2024
+ID do paciente: 127
+Diagnóstico da IA: Pneumonia
+Horário do exame: Sun Aug 25 20:16:17 2024
 -------------------------
-ID do exame: 3
+ID do exame: 128
 ID da máquina: 3
-ID do paciente: 3
-Diagnóstico da IA: Fibrose pulmonar
-Horário do exame: Sun Aug 25 18:03:40 2024
+ID do paciente: 128
+Diagnóstico da IA: Saude Normal
+Horário do exame: Sun Aug 25 20:16:18 2024
 -------------------------
-ID do exame: 4
+ID do exame: 129
 ID da máquina: 4
-ID do paciente: 4
+ID do paciente: 129
 Diagnóstico da IA: Bronquite
-Horário do exame: Sun Aug 25 18:03:41 2024
--------------------------
-ID do exame: 5
-ID da máquina: 5
-ID do paciente: 5
-Diagnóstico da IA: Bronquite
-Horário do exame: Sun Aug 25 18:03:42 2024
--------------------------
-ID do exame: 6
-ID da máquina: 1
-ID do paciente: 6
-Diagnóstico da IA: Derrame pleural
-Horário do exame: Sun Aug 25 18:03:49 2024
--------------------------
-ID do exame: 7
-ID da máquina: 2
-ID do paciente: 7
-Diagnóstico da IA: Tuberculose
-Horário do exame: Sun Aug 25 18:03:50 2024
--------------------------
-ID do exame: 8
-ID da máquina: 3
-ID do paciente: 8
-Diagnóstico da IA: Embolia pulmonar
-Horário do exame: Sun Aug 25 18:03:51 2024
--------------------------
-ID do exame: 9
-ID da máquina: 4
-ID do paciente: 9
-Diagnóstico da IA: Pneumonia
-Horário do exame: Sun Aug 25 18:03:52 2024
--------------------------
-ID do exame: 10
-ID da máquina: 5
-ID do paciente: 10
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 18:03:53 2024
--------------------------
-ID do exame: 11
-ID da máquina: 1
-ID do paciente: 11
-Diagnóstico da IA: COVID
-Horário do exame: Sun Aug 25 18:04:00 2024
--------------------------
-ID do exame: 12
-ID da máquina: 2
-ID do paciente: 12
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 18:04:01 2024
--------------------------
-ID do exame: 13
-ID da máquina: 3
-ID do paciente: 13
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 18:04:02 2024
--------------------------
-ID do exame: 14
-ID da máquina: 4
-ID do paciente: 14
-Diagnóstico da IA: Pneumonia
-Horário do exame: Sun Aug 25 18:04:03 2024
--------------------------
-ID do exame: 15
-ID da máquina: 5
-ID do paciente: 15
-Diagnóstico da IA: Câncer de pulmao
-Horário do exame: Sun Aug 25 18:04:04 2024
--------------------------
-ID do exame: 16
-ID da máquina: 1
-ID do paciente: 16
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 18:04:11 2024
--------------------------
-ID do exame: 17
-ID da máquina: 2
-ID do paciente: 17
-Diagnóstico da IA: Saude Normal
-Horário do exame: Sun Aug 25 18:04:12 2024
--------------------------
-ID do exame: 18
-ID da máquina: 3
-ID do paciente: 18
-Diagnóstico da IA: Câncer de pulmao
-Horário do exame: Sun Aug 25 18:04:13 2024
--------------------------
-ID do exame: 19
-ID da máquina: 4
-ID do paciente: 19
-Diagnóstico da IA: Tuberculose
-Horário do exame: Sun Aug 25 18:04:14 2024
--------------------------
-ID do exame: 20
-ID da máquina: 5
-ID do paciente: 20
-Diagnóstico da IA: Pneumonia
-Horário do exame: Sun Aug 25 18:04:15 2024
--------------------------
-ID do exame: 21
-ID da máquina: 1
-ID do paciente: 21
-Diagnóstico da IA: Tuberculose
-Horário do exame: Sun Aug 25 18:04:22 2024
--------------------------
-ID do exame: 22
-ID da máquina: 2
-ID do paciente: 22
-Diagnóstico da IA: COVID
-Horário do exame: Sun Aug 25 18:04:23 2024
--------------------------
-ID do exame: 23
-ID da máquina: 3
-ID do paciente: 23
-Diagnóstico da IA: Câncer de pulmao
-Horário do exame: Sun Aug 25 18:04:24 2024
--------------------------
-ID do exame: 24
-ID da máquina: 4
-ID do paciente: 24
-Diagnóstico da IA: Pneumonia
-Horário do exame: Sun Aug 25 18:04:25 2024
--------------------------
-ID do exame: 25
-ID da máquina: 5
-ID do paciente: 25
-Diagnóstico da IA: Bronquite
-Horário do exame: Sun Aug 25 18:04:26 2024
+Horário do exame: Sun Aug 25 20:16:19 2024
 -------------------------

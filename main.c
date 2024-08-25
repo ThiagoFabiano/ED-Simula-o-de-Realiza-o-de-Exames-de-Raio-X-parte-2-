@@ -13,7 +13,7 @@
 
 #define UNIDADE_DE_TEMPO 1
 #define TEMPO_LAUDO 30
-#define TEMPO_RELATORIO 15
+#define TEMPO_RELATORIO 100
 #define TEMPO_LIMITE 7200
 
 void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* filaDePacientes){
@@ -45,8 +45,8 @@ void realizarExames(MachineManager* gerenciadorDeMaquinas, Queue* filaDePaciente
     
 }
 
-void realizarLaudos(QueueExam* filaDeExamesPorPrioridade){
-    Report* laudo = criar_laudo(filaDeExamesPorPrioridade);
+void realizarLaudos(QueueExam* filaDeExamesPorPrioridade, int tempoSimulacao){
+    Report* laudo = criar_laudo(filaDeExamesPorPrioridade, tempoSimulacao);
     printf("Fianlizou o laudo\n"); 
 }
 
@@ -73,16 +73,19 @@ int main() {
 
         if((!q_is_empty_exam(filaDeExamesPorPrioridade)) && (tempoSimulacao - tempoQueExecutouOUltimoLaudo >= TEMPO_LAUDO)){
             tempoQueExecutouOUltimoLaudo = tempoSimulacao;
-            realizarLaudos(filaDeExamesPorPrioridade);
+            realizarLaudos(filaDeExamesPorPrioridade, tempoSimulacao);
         } 
+        printf("ultimo laudo %d\n", get_last_laudo_id());
+        printf("ultimo exame %d\n", get_last_exam_id());
 
         if((tempoSimulacao % TEMPO_RELATORIO == 0) && (tempoSimulacao > 1)){
             
-            printf("Relatório:\n");
+            printf("Relatorio:\n");
             printf("Numero de pacientes que visitaram o hospital: %d\n", id);
             printf("Numero pacientes na fila aguardando exame: %d\n", quantidade_pacientes(filaDePacientes));
-            printf("Numero de pacientes que já realizaram exame: %d\n", get_last_exam_id() - 1);
-            printf("Porcentagem de pacientes que fizeram exames e recebeu o laudo: %d\n", ((get_last_laudo_id()) / (get_last_exam_id() )) * 100);
+            printf("Numero de pacientes que ja realizaram exame: %d\n", get_last_exam_id() - 1);
+            printf("Porcentagem de pacientes que fizeram exames e recebeu o laudo: %.2f%%\n", ((get_last_laudo_id() / (float)get_last_exam_id()) * 100));
+            printf("Tempo médio de laudo: tempo medio que os exames ocupam a fila de prioridades: %d\n", get_time_first_to_last() / get_last_laudo_id());
         } 
 
         if((tempoSimulacao % TEMPO_LIMITE == 0) && (tempoSimulacao > 1)){

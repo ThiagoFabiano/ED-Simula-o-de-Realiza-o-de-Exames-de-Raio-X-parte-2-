@@ -46,7 +46,7 @@ void liberar_maquina(MachineManager* gerenciador, int tempoSimulacao, QueueExam*
   {
     if(gerenciador->status_maquina[i] == 1 && (tempoSimulacao - gerenciador->tempo_inicio_exame[i]) >= TEMPO_EXAME){
       Exam *exame = realizar_exame(gerenciador->id_maquina[i], gerenciador->paciente_maquina[i]->id);
-      enqueue_exam(filaDeExamesPorPrioridade, exame);
+      enqueue_exam(filaDeExamesPorPrioridade, exame, tempoSimulacao);
       gerenciador->status_maquina[i] = 0;
       gerenciador->paciente_maquina[i] = NULL;
       printf("Desalocou na maquina %d\n", i);
