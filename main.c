@@ -5,61 +5,10 @@
 #include "PatientQueue.h"
 #include "patient.h"
 #include "XRMachineManager.h"
-
-typedef struct {
-    const char *nome;
-    double probabilidade;
-    int nivel_gravidade;
-    int contador;  
-} Doenca;
-
-Doenca doencas[] = {
-    {"Saude Normal", 0.3, 1, 0},
-    {"Bronquite", 0.2, 2, 0},
-    {"Pneumonia", 0.1, 3, 0},
-    {"COVID", 0.1, 4, 0},
-    {"Embolia pulmonar", 0.05, 4, 0},
-    {"Derrame pleural", 0.05, 4, 0},
-    {"Fibrose pulmonar", 0.05, 5, 0},
-    {"Tuberculose", 0.05, 5, 0},
-    {"Câncer de pulmao", 0.1, 6, 0}
-};
-
-const int num_doencas = sizeof(doencas) / sizeof(doencas[0]);
-
-void IADiagnostico(const char **nome, int *nivel_gravidade) {
-    double r = (double)rand() / RAND_MAX; 
-    double acumulado = 0.0;
-
-    for (int i = 0; i < num_doencas; i++) {
-        acumulado += doencas[i].probabilidade;
-        if (r < acumulado) {
-            *nome = doencas[i].nome;
-            *nivel_gravidade = doencas[i].nivel_gravidade;
-            doencas[i].contador++; 
-            return;
-        }
-    }
-}
+#include "Exam.h"
+#include "IA.h"
 
 int main() {
-    /* srand(time(NULL));
-
-    const char *nome;
-    int nivel_gravidade;
-    int num_simulacoes = 1000;  
-
-    for (int i = 0; i < num_simulacoes; i++) {
-        IADiagnostico(&nome, &nivel_gravidade);
-    }
-
-    
-    printf("Resultados apos %d simulaçoes:\n", num_simulacoes);
-    for (int i = 0; i < num_doencas; i++) {
-        printf("%s: %d vezes\n", doencas[i].nome, doencas[i].contador);
-    }
-
-    return 0; */
 
     int probabilidade;
     srand(time(NULL));
@@ -67,20 +16,29 @@ int main() {
     int unidadeDeTempo = 500;
 
     int id = 1;
+    Queue* filaDePacientes = create_queue_patient();
+    MachineManager* gerenciadorDeMaquinas = criar_XRManager();
+    char nomePaciente[50];
 
     while (1) {  
         struct tm timestamp;
         time_t t = time(NULL);
         probabilidade = rand() % 100;
-        Queue* q = create_queue_patient();
-        char nomePaciente[50];
-        sprintf(nomePaciente, "Maria %d", id);
+        
 
         if(probabilidade < 20){
+            sprintf(nomePaciente, "Maria %d", id);
             timestamp = *localtime(&t);
             Patient* paciente = create_patient(id, nomePaciente, &timestamp); 
-            enqueue_patient(q, paciente);
-            q_print_patient(q);
+            enqueue_patient(filaDePacientes, paciente);
+
+            //Teste
+            const char *nomeDoenca;
+            int nivel_gravidade;
+            int maquinaAlocadaId = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes);
+            IADiagnostico(&nomeDoenca, &nivel_gravidade);
+            
+           
             id++;
         } else {
             printf("Nao chama paciente\n"); 
