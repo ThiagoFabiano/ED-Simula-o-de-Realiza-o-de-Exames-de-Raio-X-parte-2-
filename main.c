@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <windows.h>
+#include <unistd.h>
 #include "exam.h"
 #include "PatientQueue.h"
 #include "patient.h"
@@ -10,8 +10,8 @@
 #include "ExamPriorityQueue.h"
 #include "report.h"
 
-#define UNIDADE_DE_TEMPO 500
-#define TEMPO_EXAME 5000
+#define UNIDADE_DE_TEMPO 1
+#define TEMPO_EXAME 10
 
     
 void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* filaDePacientes){
@@ -21,6 +21,7 @@ void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* 
     
 
     if(probabilidade < 20){
+        printf("CHAMOU\n");
         sprintf(nomePaciente, "Maria %d", *id);
         timestamp = *localtime(&t);
         Patient* paciente = create_patient(*id, nomePaciente, &timestamp); 
@@ -34,7 +35,7 @@ void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* 
 }
 
 void realizarExames(MachineManager* gerenciadorDeMaquinas, Queue* filaDePacientes, QueueExam* filaDeExamesPorPrioridade){
-
+    printf("realizou um exame\n");
     Paciente_Maquina pacienteMaquina = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes);
     Exam *exame = realizar_exame(pacienteMaquina.maquina_id, pacienteMaquina.paciente_id);
     liberar_maquina(gerenciadorDeMaquinas, pacienteMaquina.maquina_id);
@@ -56,15 +57,16 @@ int main() {
     
     //Loop para criar a fila de pacientes
     while (1) {  
+        printf("%d\n",tempoSimulacao);
         enfileirarPacientes(probabilidade, nomePaciente, &id, filaDePacientes);
 
-        if (tempoSimulacao % TEMPO_EXAME == 0) {
+        if ((tempoSimulacao % TEMPO_EXAME == 0) && (tempoSimulacao >= TEMPO_EXAME)) {
             realizarExames( gerenciadorDeMaquinas,filaDePacientes, filaDeExamesPorPrioridade);
         };
-        
+
         tempoSimulacao += UNIDADE_DE_TEMPO;
         
-        Sleep(UNIDADE_DE_TEMPO);  
+        sleep(UNIDADE_DE_TEMPO);  
     };
 
     
