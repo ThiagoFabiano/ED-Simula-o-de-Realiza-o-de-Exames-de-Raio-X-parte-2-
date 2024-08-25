@@ -33,4 +33,6 @@ Patient* enqueue_patient(Queue *q, Patient *p);
 //Remove e retorna o primeiro paciente da fila
 Patient* q_dequeue_patient(Queue *q);
 
+void q_print_patient(Queue *q);
+
 #endif

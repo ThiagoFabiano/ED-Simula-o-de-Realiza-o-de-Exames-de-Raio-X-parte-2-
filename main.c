@@ -66,22 +66,27 @@ int main() {
 
     int unidadeDeTempo = 500;
 
+    int id = 1;
 
     while (1) {  
         struct tm timestamp;
         time_t t = time(NULL);
         probabilidade = rand() % 100;
         Queue* q = create_queue_patient();
+        char nomePaciente[50];
+        sprintf(nomePaciente, "Maria %d", id);
 
         if(probabilidade < 20){
             timestamp = *localtime(&t);
-            Patient* paciente = create_patient(1, "John Doe", &timestamp); 
+            Patient* paciente = create_patient(id, nomePaciente, &timestamp); 
             enqueue_patient(q, paciente);
             q_print_patient(q);
-
+            id++;
         } else {
             printf("Nao chama paciente\n"); 
         };
+
+        
         Sleep(unidadeDeTempo);  
     }
 
