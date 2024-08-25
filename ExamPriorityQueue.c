@@ -48,13 +48,17 @@ Exam* enqueue_exam(QueueExam *q, Exam *e)
    else 
    {
       QueueNodeExam *current = q->inicio;
-      q->final->next = node;
 
       while (current->next != NULL && current->next->exam->nivel_gravidade >= e->nivel_gravidade) {
          current = current->next;
       }
       node->next = current->next;
       current->next = node;
+     
+     if (current->next==NULL)
+     {
+       q->final=node;
+     }
    }  
 }
 
