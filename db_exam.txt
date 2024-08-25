@@ -5488,3 +5488,75 @@ ID do paciente: 915
 Diagnóstico da IA: Saude Normal
 Horário do exame: Sun Aug 25 10:57:51 2024
 -------------------------
+ID do exame: 916
+ID da máquina: 1
+ID do paciente: 916
+Diagnóstico da IA: Derrame pleural
+Horário do exame: Sun Aug 25 10:57:53 2024
+-------------------------
+ID do exame: 917
+ID da máquina: 1
+ID do paciente: 917
+Diagnóstico da IA: Saude Normal
+Horário do exame: Sun Aug 25 10:57:55 2024
+-------------------------
+ID do exame: 918
+ID da máquina: 1
+ID do paciente: 918
+Diagnóstico da IA: COVID
+Horário do exame: Sun Aug 25 10:57:56 2024
+-------------------------
+ID do exame: 919
+ID da máquina: 1
+ID do paciente: 919
+Diagnóstico da IA: Saude Normal
+Horário do exame: Sun Aug 25 10:57:58 2024
+-------------------------
+ID do exame: 920
+ID da máquina: 1
+ID do paciente: 920
+Diagnóstico da IA: Saude Normal
+Horário do exame: Sun Aug 25 10:58:01 2024
+-------------------------
+ID do exame: 921
+ID da máquina: 1
+ID do paciente: 921
+Diagnóstico da IA: COVID
+Horário do exame: Sun Aug 25 10:58:02 2024
+-------------------------
+ID do exame: 922
+ID da máquina: 1
+ID do paciente: 922
+Diagnóstico da IA: Tuberculose
+Horário do exame: Sun Aug 25 10:58:05 2024
+-------------------------
+ID do exame: 923
+ID da máquina: 1
+ID do paciente: 923
+Diagnóstico da IA: Bronquite
+Horário do exame: Sun Aug 25 10:58:06 2024
+-------------------------
+ID do exame: 924
+ID da máquina: 1
+ID do paciente: 924
+Diagnóstico da IA: Pneumonia
+Horário do exame: Sun Aug 25 10:58:07 2024
+-------------------------
+ID do exame: 925
+ID da máquina: 1
+ID do paciente: 925
+Diagnóstico da IA: Câncer de pulmao
+Horário do exame: Sun Aug 25 10:58:09 2024
+-------------------------
+ID do exame: 926
+ID da máquina: 1
+ID do paciente: 926
+Diagnóstico da IA: Saude Normal
+Horário do exame: Sun Aug 25 10:58:11 2024
+-------------------------
+ID do exame: 927
+ID da máquina: 1
+ID do paciente: 927
+Diagnóstico da IA: Bronquite
+Horário do exame: Sun Aug 25 10:58:13 2024
+-------------------------
