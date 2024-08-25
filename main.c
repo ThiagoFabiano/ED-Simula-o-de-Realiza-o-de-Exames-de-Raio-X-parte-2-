@@ -10,8 +10,8 @@
 #include "ExamPriorityQueue.h"
 #include "report.h"
 
-#define UNIDADE_DE_TEMPO 1
-#define TEMPO_EXAME 10
+#define UNIDADE_DE_TEMPO 500000
+#define TEMPO_EXAME UNIDADE_DE_TEMPO * 10
 
     
 void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* filaDePacientes){
@@ -37,9 +37,13 @@ void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* 
 void realizarExames(MachineManager* gerenciadorDeMaquinas, Queue* filaDePacientes, QueueExam* filaDeExamesPorPrioridade){
     printf("realizou um exame\n");
     Paciente_Maquina pacienteMaquina = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes);
+    printf("Aqui 1\n");
     Exam *exame = realizar_exame(pacienteMaquina.maquina_id, pacienteMaquina.paciente_id);
+    printf("Aqui 2\n");
     liberar_maquina(gerenciadorDeMaquinas, pacienteMaquina.maquina_id);
+    printf("Aqui 3\n");
     enqueue_exam(filaDeExamesPorPrioridade, exame);
+    printf("Aqui 4\n");
 
 };
 
@@ -66,7 +70,7 @@ int main() {
 
         tempoSimulacao += UNIDADE_DE_TEMPO;
         
-        sleep(UNIDADE_DE_TEMPO);  
+        usleep(UNIDADE_DE_TEMPO);  
     };
 
     
