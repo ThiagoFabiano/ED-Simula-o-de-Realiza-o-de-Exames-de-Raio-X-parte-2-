@@ -17,19 +17,14 @@ struct queue_node
    QueueNode *next; 
 };
 
-//Criar fila
 Queue* create_queue_exam();
 
-//Liberar a memória da fila
 void q_free_exam(Queue *q);
 
-//verificar se a fila esta vazia
 int q_is_empty_exam(Queue *q);
 
-//Adicionar paciente na fila
-Exam* enqueue_exam(Queue *q, Exam *p);
+Exam* enqueue_exam(Queue *q, Exam *e);
 
-//Remove e retorna o primeiro paciente da fila
 Exam* q_dequeue_exam(Queue *q);
 
 void q_print_exam(Queue *q);
