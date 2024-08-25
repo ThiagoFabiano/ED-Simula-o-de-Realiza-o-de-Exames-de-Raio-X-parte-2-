@@ -1,3 +1,4 @@
+#define TEMPO_EXAME 10
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -11,15 +12,8 @@
 #include "report.h"
 
 #define UNIDADE_DE_TEMPO 1
-#define TEMPO_EXAME 10
 #define TEMPO_LAUDO 30
 
-typedef struct {
-    int tempoInicioExame;
-    int maquinaOcupada;
-} ControleExame;
-
-    
 void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* filaDePacientes){
     struct tm timestamp;
     time_t t = time(NULL);
@@ -40,25 +34,13 @@ void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* 
 
 }
 
-void realizarExames(MachineManager* gerenciadorDeMaquinas, Queue* filaDePacientes, QueueExam* filaDeExamesPorPrioridade, ControleExame* controleExame, int tempoSimulacao) {
-    for (int i = 0; i < TOTAL_MAQUINAS; i++) {
-        if (gerenciadorDeMaquinas->status_maquina[i] == 0 && !q_is_empty_patient(filaDePacientes)) {
-            // Alocar paciente à máquina e iniciar o exame
-            Paciente_Maquina pacienteMaquina = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes);
-            controleExame[i].tempoInicioExame = tempoSimulacao;
-            controleExame[i].maquinaOcupada = 1;
-            printf("Iniciou exame na maquina %d\n", gerenciadorDeMaquinas->id_maquina[i]);
-        }
+void realizarExames(MachineManager* gerenciadorDeMaquinas, Queue* filaDePacientes, QueueExam* filaDeExamesPorPrioridade, int tempoSimulacao) {
 
-        // Verifica se o exame terminou
-        if (controleExame[i].maquinaOcupada && (tempoSimulacao - controleExame[i].tempoInicioExame) >= TEMPO_EXAME) {
-            Exam *exame = realizar_exame(gerenciadorDeMaquinas->id_maquina[i], gerenciadorDeMaquinas->paciente_maquina[i]->id);
-            liberar_maquina(gerenciadorDeMaquinas, gerenciadorDeMaquinas->id_maquina[i]);
-            enqueue_exam(filaDeExamesPorPrioridade, exame);
-            controleExame[i].maquinaOcupada = 0;
-            printf("Finalizou exame na maquina %d\n", gerenciadorDeMaquinas->id_maquina[i]);
-        }
-    }
+    Paciente_Maquina pacienteMaquina = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes, tempoSimulacao);
+    liberar_maquina(gerenciadorDeMaquinas, tempoSimulacao);
+    /* Exam *exame = realizar_exame(pacienteMaquina.maquina_id, pacienteMaquina.paciente_id);
+    enqueue_exam(filaDeExamesPorPrioridade, exame); */
+    
 }
 
 void realizarLaudos(QueueExam* filaDeExamesPorPrioridade){
@@ -77,7 +59,6 @@ int main() {
     Queue* filaDePacientes = create_queue_patient();
     QueueExam* filaDeExamesPorPrioridade = create_queue_exam();
     MachineManager* gerenciadorDeMaquinas = criar_XRManager();
-    ControleExame controleExame[TOTAL_MAQUINAS] = {0}; // Controle de exame por máquina
     char nomePaciente[50];
     
     //Loop para criar a fila de pacientes
@@ -85,7 +66,7 @@ int main() {
         printf("%d\n",tempoSimulacao);
         enfileirarPacientes(probabilidade, nomePaciente, &id, filaDePacientes);
 
-        realizarExames(gerenciadorDeMaquinas, filaDePacientes, filaDeExamesPorPrioridade, controleExame, tempoSimulacao);
+        realizarExames(gerenciadorDeMaquinas, filaDePacientes, filaDeExamesPorPrioridade,  tempoSimulacao);
 
         if((!q_is_empty_exam(filaDeExamesPorPrioridade)) && (tempoSimulacao - tempoQueExecutouOUltimoLaudo >= TEMPO_LAUDO)){
             tempoQueExecutouOUltimoLaudo = tempoSimulacao;
