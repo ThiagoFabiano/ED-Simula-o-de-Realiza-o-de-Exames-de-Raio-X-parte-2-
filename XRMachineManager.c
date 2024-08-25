@@ -24,6 +24,7 @@ Paciente_Maquina alocar_paciente(MachineManager* gerenciador, Queue* patientQueu
     for (int i=0; i<TOTAL_MAQUINAS; i++) 
         {
           if(gerenciador->status_maquina[i] == 0)
+          { // ADICIONADO
             gerenciador->status_maquina[i] = 1;
             gerenciador->paciente_maquina[i] = patient;
 
@@ -31,6 +32,7 @@ Paciente_Maquina alocar_paciente(MachineManager* gerenciador, Queue* patientQueu
             estrutura.paciente_id = patient->id;
             
             return estrutura;
+          }
         }
       }    
   sleep(1);
