@@ -45,21 +45,20 @@ Exam* enqueue_exam(QueueExam *q, Exam *e)
       q->inicio = node;
    }
 
-   else 
-   {
+   else {
       QueueNodeExam *current = q->inicio;
 
-      while (current->next != NULL && current->next->exam->nivel_gravidade >= e->nivel_gravidade) {
+      while (current->next != NULL && current->next->exam->nivel_gravidade >= e->nivel_gravidade) 
+      {
          current = current->next;
       }
       node->next = current->next;
       current->next = node;
-     
-     if (current->next==NULL)
-     {
-       q->final=node;
-     }
-   }  
+
+      if (node->next == NULL) {
+         q->final = node;
+      }
+   }
 }
 
 //Remove e retorna o primeiro exame da fila
@@ -94,4 +93,3 @@ void q_print_exam(QueueExam *q) {
     }
     printf("\n");
 }
-
