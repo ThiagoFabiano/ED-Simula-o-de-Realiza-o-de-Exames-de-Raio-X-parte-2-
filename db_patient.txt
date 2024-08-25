@@ -1,365 +1,205 @@
 ID: 1
 Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:07:05 2024
+Horario de Chegada: Sun Aug 25 13:02:23 2024
 
 -------------------------
 ID: 2
 Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:07:07 2024
+Horario de Chegada: Sun Aug 25 13:02:24 2024
 
 -------------------------
 ID: 3
 Nome: Maria 3
-Horario de Chegada: Sun Aug 25 12:07:10 2024
+Horario de Chegada: Sun Aug 25 13:02:26 2024
 
 -------------------------
 ID: 4
 Nome: Maria 4
-Horario de Chegada: Sun Aug 25 12:07:11 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:09:49 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:09:50 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:10:29 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:10:29 2024
-
--------------------------
-ID: 3
-Nome: Maria 3
-Horario de Chegada: Sun Aug 25 12:10:30 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:10:54 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:11:55 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:11:56 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:12:05 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:12:06 2024
-
--------------------------
-ID: 3
-Nome: Maria 3
-Horario de Chegada: Sun Aug 25 12:12:08 2024
-
--------------------------
-ID: 4
-Nome: Maria 4
-Horario de Chegada: Sun Aug 25 12:12:09 2024
+Horario de Chegada: Sun Aug 25 13:02:27 2024
 
 -------------------------
 ID: 5
 Nome: Maria 5
-Horario de Chegada: Sun Aug 25 12:12:10 2024
+Horario de Chegada: Sun Aug 25 13:02:29 2024
 
 -------------------------
 ID: 6
 Nome: Maria 6
-Horario de Chegada: Sun Aug 25 12:12:13 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:12:28 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:12:38 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:12:39 2024
-
--------------------------
-ID: 3
-Nome: Maria 3
-Horario de Chegada: Sun Aug 25 12:12:41 2024
-
--------------------------
-ID: 4
-Nome: Maria 4
-Horario de Chegada: Sun Aug 25 12:12:52 2024
-
--------------------------
-ID: 5
-Nome: Maria 5
-Horario de Chegada: Sun Aug 25 12:12:54 2024
-
--------------------------
-ID: 6
-Nome: Maria 6
-Horario de Chegada: Sun Aug 25 12:12:55 2024
+Horario de Chegada: Sun Aug 25 13:02:34 2024
 
 -------------------------
 ID: 7
 Nome: Maria 7
-Horario de Chegada: Sun Aug 25 12:12:57 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:14:20 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:14:26 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:15:00 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:15:01 2024
-
--------------------------
-ID: 3
-Nome: Maria 3
-Horario de Chegada: Sun Aug 25 12:15:08 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:16:07 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:16:09 2024
-
--------------------------
-ID: 3
-Nome: Maria 3
-Horario de Chegada: Sun Aug 25 12:16:13 2024
-
--------------------------
-ID: 4
-Nome: Maria 4
-Horario de Chegada: Sun Aug 25 12:16:17 2024
-
--------------------------
-ID: 5
-Nome: Maria 5
-Horario de Chegada: Sun Aug 25 12:16:22 2024
-
--------------------------
-ID: 6
-Nome: Maria 6
-Horario de Chegada: Sun Aug 25 12:16:24 2024
-
--------------------------
-ID: 7
-Nome: Maria 7
-Horario de Chegada: Sun Aug 25 12:16:25 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:16:42 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:16:46 2024
-
--------------------------
-ID: 3
-Nome: Maria 3
-Horario de Chegada: Sun Aug 25 12:17:01 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:19:38 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:19:48 2024
-
--------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:23:21 2024
-
--------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:23:22 2024
-
--------------------------
-ID: 3
-Nome: Maria 3
-Horario de Chegada: Sun Aug 25 12:23:33 2024
-
--------------------------
-ID: 4
-Nome: Maria 4
-Horario de Chegada: Sun Aug 25 12:23:34 2024
-
--------------------------
-ID: 5
-Nome: Maria 5
-Horario de Chegada: Sun Aug 25 12:23:35 2024
-
--------------------------
-ID: 6
-Nome: Maria 6
-Horario de Chegada: Sun Aug 25 12:23:38 2024
-
--------------------------
-ID: 7
-Nome: Maria 7
-Horario de Chegada: Sun Aug 25 12:23:46 2024
+Horario de Chegada: Sun Aug 25 13:02:37 2024
 
 -------------------------
 ID: 8
 Nome: Maria 8
-Horario de Chegada: Sun Aug 25 12:23:47 2024
+Horario de Chegada: Sun Aug 25 13:02:43 2024
 
 -------------------------
 ID: 9
 Nome: Maria 9
-Horario de Chegada: Sun Aug 25 12:23:49 2024
+Horario de Chegada: Sun Aug 25 13:02:50 2024
 
 -------------------------
 ID: 10
 Nome: Maria 10
-Horario de Chegada: Sun Aug 25 12:23:50 2024
+Horario de Chegada: Sun Aug 25 13:02:52 2024
 
 -------------------------
 ID: 11
 Nome: Maria 11
-Horario de Chegada: Sun Aug 25 12:23:54 2024
+Horario de Chegada: Sun Aug 25 13:02:55 2024
 
 -------------------------
 ID: 12
 Nome: Maria 12
-Horario de Chegada: Sun Aug 25 12:24:00 2024
+Horario de Chegada: Sun Aug 25 13:02:57 2024
+
+-------------------------
+ID: 13
+Nome: Maria 13
+Horario de Chegada: Sun Aug 25 13:03:00 2024
+
+-------------------------
+ID: 14
+Nome: Maria 14
+Horario de Chegada: Sun Aug 25 13:03:17 2024
+
+-------------------------
+ID: 15
+Nome: Maria 15
+Horario de Chegada: Sun Aug 25 13:03:19 2024
+
+-------------------------
+ID: 16
+Nome: Maria 16
+Horario de Chegada: Sun Aug 25 13:03:20 2024
+
+-------------------------
+ID: 17
+Nome: Maria 17
+Horario de Chegada: Sun Aug 25 13:03:21 2024
+
+-------------------------
+ID: 18
+Nome: Maria 18
+Horario de Chegada: Sun Aug 25 13:03:25 2024
+
+-------------------------
+ID: 19
+Nome: Maria 19
+Horario de Chegada: Sun Aug 25 13:03:30 2024
 
 -------------------------
 ID: 1
 Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:27:18 2024
+Horario de Chegada: Sun Aug 25 13:05:07 2024
 
 -------------------------
 ID: 2
 Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:27:19 2024
+Horario de Chegada: Sun Aug 25 13:05:08 2024
 
 -------------------------
 ID: 3
 Nome: Maria 3
-Horario de Chegada: Sun Aug 25 12:27:25 2024
+Horario de Chegada: Sun Aug 25 13:05:14 2024
 
 -------------------------
 ID: 4
 Nome: Maria 4
-Horario de Chegada: Sun Aug 25 12:27:27 2024
+Horario de Chegada: Sun Aug 25 13:05:22 2024
 
 -------------------------
 ID: 5
 Nome: Maria 5
-Horario de Chegada: Sun Aug 25 12:27:28 2024
+Horario de Chegada: Sun Aug 25 13:05:25 2024
 
 -------------------------
 ID: 6
 Nome: Maria 6
-Horario de Chegada: Sun Aug 25 12:27:29 2024
+Horario de Chegada: Sun Aug 25 13:05:26 2024
 
 -------------------------
 ID: 7
 Nome: Maria 7
-Horario de Chegada: Sun Aug 25 12:27:46 2024
+Horario de Chegada: Sun Aug 25 13:05:27 2024
 
 -------------------------
 ID: 8
 Nome: Maria 8
-Horario de Chegada: Sun Aug 25 12:27:50 2024
+Horario de Chegada: Sun Aug 25 13:05:32 2024
 
 -------------------------
 ID: 9
 Nome: Maria 9
-Horario de Chegada: Sun Aug 25 12:27:51 2024
+Horario de Chegada: Sun Aug 25 13:05:34 2024
 
 -------------------------
 ID: 10
 Nome: Maria 10
-Horario de Chegada: Sun Aug 25 12:27:54 2024
+Horario de Chegada: Sun Aug 25 13:05:39 2024
 
 -------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:28:16 2024
+ID: 11
+Nome: Maria 11
+Horario de Chegada: Sun Aug 25 13:05:43 2024
 
 -------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:28:21 2024
+ID: 12
+Nome: Maria 12
+Horario de Chegada: Sun Aug 25 13:05:47 2024
 
 -------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:28:43 2024
+ID: 13
+Nome: Maria 13
+Horario de Chegada: Sun Aug 25 13:05:49 2024
 
 -------------------------
-ID: 2
-Nome: Maria 2
-Horario de Chegada: Sun Aug 25 12:28:51 2024
+ID: 14
+Nome: Maria 14
+Horario de Chegada: Sun Aug 25 13:05:53 2024
 
 -------------------------
-ID: 3
-Nome: Maria 3
-Horario de Chegada: Sun Aug 25 12:28:54 2024
+ID: 15
+Nome: Maria 15
+Horario de Chegada: Sun Aug 25 13:06:01 2024
 
 -------------------------
-ID: 4
-Nome: Maria 4
-Horario de Chegada: Sun Aug 25 12:28:55 2024
+ID: 16
+Nome: Maria 16
+Horario de Chegada: Sun Aug 25 13:06:06 2024
 
 -------------------------
-ID: 5
-Nome: Maria 5
-Horario de Chegada: Sun Aug 25 12:28:58 2024
+ID: 17
+Nome: Maria 17
+Horario de Chegada: Sun Aug 25 13:06:07 2024
 
 -------------------------
-ID: 1
-Nome: Maria 1
-Horario de Chegada: Sun Aug 25 12:35:29 2024
+ID: 18
+Nome: Maria 18
+Horario de Chegada: Sun Aug 25 13:06:09 2024
+
+-------------------------
+ID: 19
+Nome: Maria 19
+Horario de Chegada: Sun Aug 25 13:06:12 2024
+
+-------------------------
+ID: 20
+Nome: Maria 20
+Horario de Chegada: Sun Aug 25 13:06:19 2024
+
+-------------------------
+ID: 21
+Nome: Maria 21
+Horario de Chegada: Sun Aug 25 13:06:34 2024
+
+-------------------------
+ID: 22
+Nome: Maria 22
+Horario de Chegada: Sun Aug 25 13:06:42 2024
 
 -------------------------

@@ -1,0 +1,30 @@
+ID do Laudo: 1
+ID do Exame: 2
+ID do Paciente: 1
+Condição Final: Câncer de pulmao
+Horário do Laudo: Sun Aug 25 13:02:19 2024
+-------------------------
+ID do Laudo: 2
+ID do Exame: 5
+ID do Paciente: 3
+Condição Final: Câncer de pulmao
+Horário do Laudo: Sun Aug 25 13:02:50 2024
+-------------------------
+ID do Laudo: 1
+ID do Exame: 1
+ID do Paciente: 1
+Condição Final: Bronquite
+Horário do Laudo: Sun Aug 25 13:05:09 2024
+-------------------------
+ID do Laudo: 2
+ID do Exame: 4
+ID do Paciente: 4
+Condição Final: Tuberculose
+Horário do Laudo: Sun Aug 25 13:05:39 2024
+-------------------------
+ID do Laudo: 3
+ID do Exame: 7
+ID do Paciente: 7
+Condição Final: Câncer de pulmao
+Horário do Laudo: Sun Aug 25 13:06:10 2024
+-------------------------
