@@ -13,6 +13,6 @@ typedef struct report {
 
 const char* determinar_condicao(Exam *exame);
 
-Report* criar_laudo(Queue *fila_exames);
+Report* criar_laudo(QueueExam *fila_exames);
 
 #endif

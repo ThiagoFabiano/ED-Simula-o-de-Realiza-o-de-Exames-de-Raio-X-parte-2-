@@ -2,31 +2,31 @@
 #define EXAMPRIORITYQUEUE_H
 #include "exam.h"
 
-typedef struct queue_node QueueNode;
-typedef struct queue Queue;     
+typedef struct queue_node_exam QueueNodeExam;
+typedef struct queue_exam QueueExam;     
 
-struct queue
+struct queue_exam
 {
-   QueueNode *inicio; // Pointer to the front of the queue.
-   QueueNode *final;  // Pointer to the rear of the queue.
+   QueueNodeExam *inicio; // Pointer to the front of the queue.
+   QueueNodeExam *final;  // Pointer to the rear of the queue.
 };
 //struct queue_node
-struct queue_node
+struct queue_node_exam
 {
    Exam *exam;      
-   QueueNode *next; 
+   QueueNodeExam *next; 
 };
 
-Queue* create_queue_exam();
+QueueExam* create_queue_exam();
 
-void q_free_exam(Queue *q);
+void q_free_exam(QueueExam *q);
 
-int q_is_empty_exam(Queue *q);
+int q_is_empty_exam(QueueExam *q);
 
-Exam* enqueue_exam(Queue *q, Exam *e);
+Exam* enqueue_exam(QueueExam *q, Exam *e);
 
-Exam* dequeue_exam(Queue *q);
+Exam* dequeue_exam(QueueExam *q);
 
-void q_print_exam(Queue *q);
+void q_print_exam(QueueExam *q);
 
 #endif

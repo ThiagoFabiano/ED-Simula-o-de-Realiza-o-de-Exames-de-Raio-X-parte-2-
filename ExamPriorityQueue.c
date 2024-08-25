@@ -6,20 +6,20 @@
 #include "exam.h"
 
 //Criar fila
-Queue* create_queue_exam()
+QueueExam* create_queue_exam()
 {
-  Queue *q = (Queue *)malloc(sizeof(Queue)); 
+  QueueExam *q = (QueueExam *)malloc(sizeof(QueueExam)); 
    q->inicio = q->final = NULL;                 
    return q;
 }
 
 //Liberar a memória da fila
-void q_free_exam(Queue *q)
+void q_free_exam(QueueExam *q)
 {
-   QueueNode *p = q->inicio;
+   QueueNodeExam *p = q->inicio;
    while (p != NULL)
    {
-      QueueNode *t = p->next; 
+      QueueNodeExam *t = p->next; 
       free(p);                
       p = t;                  
    }
@@ -27,15 +27,15 @@ void q_free_exam(Queue *q)
 }
 
 //verificar se a fila esta vazia
-int q_is_empty_exam(Queue *q)
+int q_is_empty_exam(QueueExam *q)
 {
    return q->inicio == NULL;
 }
 
 //Adicionar exame na fila
-Exam* enqueue_exam(Queue *q, Exam *e)
+Exam* enqueue_exam(QueueExam *q, Exam *e)
 {
-  QueueNode *node = (QueueNode *)malloc(sizeof(QueueNode)); // aloca a memoria para o no de um exame
+  QueueNodeExam *node = (QueueNodeExam *)malloc(sizeof(QueueNodeExam)); // aloca a memoria para o no de um exame
    node->exam = e;
    node->next = NULL;
 
@@ -47,7 +47,7 @@ Exam* enqueue_exam(Queue *q, Exam *e)
 
    else 
    {
-      QueueNode *current = q->inicio;
+      QueueNodeExam *current = q->inicio;
       q->final->next = node;
 
       while (current->next != NULL && current->next->exam->nivel_gravidade >= e->nivel_gravidade) {
@@ -59,13 +59,13 @@ Exam* enqueue_exam(Queue *q, Exam *e)
 }
 
 //Remove e retorna o primeiro exame da fila
-Exam* dequeue_exam(Queue *q)
+Exam* dequeue_exam(QueueExam *q)
 {
    if (q_is_empty_exam(q)) {
         return NULL;
     }
 
-    QueueNode *prioridade = q->inicio;
+    QueueNodeExam *prioridade = q->inicio;
     Exam *exam = prioridade->exam;
 
     q->inicio = q->inicio->next;
@@ -79,8 +79,8 @@ Exam* dequeue_exam(Queue *q)
 }
 
 
-void q_print_exam(Queue *q) {
-    for (QueueNode *node = q->inicio; node != NULL; node = node->next) {
+void q_print_exam(QueueExam *q) {
+    for (QueueNodeExam *node = q->inicio; node != NULL; node = node->next) {
       char time_buffer[80]; // Buffer para armazenar a string formatada do tempo
       strftime(time_buffer, sizeof(time_buffer), "%Y-%m-%d %H:%M:%S", &(node->exam->timestamp)); // Formata o tempo
       printf("ID do Exame:%d\n",node->exam->id);
