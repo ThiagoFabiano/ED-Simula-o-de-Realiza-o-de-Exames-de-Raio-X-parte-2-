@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
+#include "exam.h"
 #include "PatientQueue.h"
 #include "patient.h"
 #include "XRMachineManager.h"
-#include "Exam.h"
 #include "IA.h"
 
 int main() {
@@ -30,23 +30,21 @@ int main() {
             sprintf(nomePaciente, "Maria %d", id);
             timestamp = *localtime(&t);
             Patient* paciente = create_patient(id, nomePaciente, &timestamp); 
-            enqueue_patient(filaDePacientes, paciente);
-
-            //Teste
-            const char *nomeDoenca;
-            int nivel_gravidade;
-            int maquinaAlocadaId = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes);
-            IADiagnostico(&nomeDoenca, &nivel_gravidade);
-            
-           
+            enqueue_patient(filaDePacientes, paciente);         
             id++;
         } else {
             printf("Nao chama paciente\n"); 
         };
-
-        
         Sleep(unidadeDeTempo);  
     }
+
+    while(1){
+        int maquinaAlocadaId = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes);
+        Exam *exame = realizar_exame(maquinaAlocadaId, paciente->id);
+        Sleep(unidadeDeTempo * 10);  
+    }
+
+    
 
     return 0;
 }

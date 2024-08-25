@@ -4,6 +4,15 @@
 
 typedef struct exam Exam;
 
+typedef struct exam {
+  int id;
+  int id_rx;
+  int patient_id;
+  const char *condition_IA;
+  int nivel_gravidade;
+  struct tm timestamp;
+} Exam;
+
 Exam *realizar_exame(int id_rx, int patient_id);
 
 void destroy_exam(Exam *exam);

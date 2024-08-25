@@ -1,20 +1,13 @@
-#include "exam.h"
 #include "IA.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include "exam.h"
 
 static int id_exam = 1;
 
-typedef struct exam {
-  int id;
-  int id_rx;
-  int patient_id;
-  const char *condition_IA;
-  int nivel_gravidade;
-  struct tm timestamp;
-} Exam;
+
 
 Exam *realizar_exame(int id_rx, int patient_id) {
   const char *condition_IA;
