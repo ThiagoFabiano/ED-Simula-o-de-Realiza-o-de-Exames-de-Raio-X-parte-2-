@@ -52,14 +52,6 @@ Exam* enqueue_exam(QueueExam *q, Exam *e)
    } else {
        printf("Aqui 11\n");
       QueueNodeExam *current = q->inicio;
-       printf("Aqui 12\n");
-  
-       printf("%d\n",  node);
-       printf("%d\n",  q);
-       printf("%d\n", q->final);
-       printf("%d\n", q->final->next);
-      q->final->next = node;
-       printf("Aqui 13\n");
 
       while (current->next != NULL && current->next->exam->nivel_gravidade >= e->nivel_gravidade) {
           printf("Aqui 14\n");
@@ -69,7 +61,11 @@ Exam* enqueue_exam(QueueExam *q, Exam *e)
       node->next = current->next;
        printf("Aqui 16\n");
       current->next = node;
-       printf("Aqui 17\n");
+     
+     if (current->next==NULL)
+     {
+       q->final=node;
+     }
    }  
 }
 
