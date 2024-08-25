@@ -43,9 +43,12 @@ void liberar_maquina(MachineManager* gerenciador, int id_maquina)
 {
   for (int i=0; i<TOTAL_MAQUINAS; i++) 
   {
-    if(gerenciador->status_maquina[i] == id_maquina)
+    if(gerenciador->status_maquina[i] == 1){
+
       gerenciador->status_maquina[i] = 0;
       gerenciador->paciente_maquina[i] = NULL;
+      printf("Aqui liberou a maquina de id: %d\n", id_maquina);
       break;  
+    }
   }
 }
