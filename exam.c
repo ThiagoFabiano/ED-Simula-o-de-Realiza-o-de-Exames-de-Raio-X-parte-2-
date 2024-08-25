@@ -82,3 +82,7 @@ struct tm *get_exam_time(Exam *exam) {
   return &(exam->timestamp);
 }
 
+int get_last_exam_id(){
+  return id_exam - 1;
+};
+

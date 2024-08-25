@@ -64,3 +64,7 @@ Report* criar_laudo(QueueExam *fila_exames) {
 
     return laudo;
 }
+
+int get_last_laudo_id(){
+    return id_laudo - 1;
+}

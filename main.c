@@ -13,6 +13,8 @@
 
 #define UNIDADE_DE_TEMPO 1
 #define TEMPO_LAUDO 30
+#define TEMPO_RELATORIO 15
+#define TEMPO_LIMITE 7200
 
 void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* filaDePacientes){
     struct tm timestamp;
@@ -56,6 +58,7 @@ int main() {
     int id = 1;
     int tempoSimulacao = 0;
     int tempoQueExecutouOUltimoLaudo = -1;
+    int ultimoExameId = 0;
     Queue* filaDePacientes = create_queue_patient();
     QueueExam* filaDeExamesPorPrioridade = create_queue_exam();
     MachineManager* gerenciadorDeMaquinas = criar_XRManager();
@@ -73,15 +76,26 @@ int main() {
             realizarLaudos(filaDeExamesPorPrioridade);
         } 
 
+        if((tempoSimulacao % TEMPO_RELATORIO == 0) && (tempoSimulacao > 1)){
+            
+            printf("Relatório:\n");
+            printf("Numero de pacientes que visitaram o hospital: %d\n", id);
+            printf("Numero pacientes na fila aguardando exame: %d\n", quantidade_pacientes(filaDePacientes));
+            printf("Numero de pacientes que já realizaram exame: %d\n", get_last_exam_id() - 1);
+            printf("Porcentagem de pacientes que fizeram exames e recebeu o laudo: %d\n", ((get_last_laudo_id()) / (get_last_exam_id() )) * 100);
+        } 
+
+        if((tempoSimulacao % TEMPO_LIMITE == 0) && (tempoSimulacao > 1)){
+            
+            printf("Relatório:\n");
+            printf("Número de exames realizados após o limite de tempo estabelecido: %d\n", get_last_exam_id() - 1);
+        } 
+
 
         tempoSimulacao += UNIDADE_DE_TEMPO;
         
         sleep(UNIDADE_DE_TEMPO);  
     };
-
-    
-
- 
 
     return 0;
 }

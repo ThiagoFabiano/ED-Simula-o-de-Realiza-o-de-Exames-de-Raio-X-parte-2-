@@ -1,30 +1,49 @@
+
 ID do Laudo: 1
-ID do Exame: 9
-ID do Paciente: 15
+ID do Exame: 8
+ID do Paciente: 8
 Condição Final: Câncer de pulmao
-Horário do Laudo: Sun Aug 25 17:11:45 2024
+Horário do Laudo: Sun Aug 25 17:21:59 2024
 -------------------------
 ID do Laudo: 2
-ID do Exame: 11
-ID do Paciente: 23
-Condição Final: Câncer de pulmao
-Horário do Laudo: Sun Aug 25 17:11:53 2024
--------------------------
-ID do Laudo: 3
 ID do Exame: 13
-ID do Paciente: 25
+ID do Paciente: 13
 Condição Final: Câncer de pulmao
-Horário do Laudo: Sun Aug 25 17:11:55 2024
+Horário do Laudo: Sun Aug 25 17:22:11 2024
 -------------------------
 ID do Laudo: 1
 ID do Exame: 1
 ID do Paciente: 1
 Condição Final: Câncer de pulmao
-Horário do Laudo: Sun Aug 25 17:18:28 2024
+Horário do Laudo: Sun Aug 25 17:43:36 2024
+-------------------------
+ID do Laudo: 1
+ID do Exame: 2
+ID do Paciente: 2
+Condição Final: Embolia pulmonar
+Horário do Laudo: Sun Aug 25 17:44:48 2024
+-------------------------
+ID do Laudo: 1
+ID do Exame: 8
+ID do Paciente: 8
+Condição Final: Câncer de pulmao
+Horário do Laudo: Sun Aug 25 17:50:17 2024
 -------------------------
 ID do Laudo: 2
+ID do Exame: 13
+ID do Paciente: 13
+Condição Final: Câncer de pulmao
+Horário do Laudo: Sun Aug 25 17:50:28 2024
+-------------------------
+ID do Laudo: 1
+ID do Exame: 2
+ID do Paciente: 2
+Condição Final: Bronquite
+Horário do Laudo: Sun Aug 25 17:57:18 2024
+-------------------------
+ID do Laudo: 1
 ID do Exame: 3
 ID do Paciente: 3
-Condição Final: Câncer de pulmao
-Horário do Laudo: Sun Aug 25 17:18:31 2024
+Condição Final: Fibrose pulmonar
+Horário do Laudo: Sun Aug 25 18:03:40 2024
 -------------------------

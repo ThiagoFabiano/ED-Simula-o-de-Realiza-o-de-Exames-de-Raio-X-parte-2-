@@ -15,4 +15,6 @@ const char* determinar_condicao(Exam *exame);
 
 Report* criar_laudo(QueueExam *fila_exames);
 
+int get_last_laudo_id();
+
 #endif

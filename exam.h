@@ -25,4 +25,6 @@ int get_exam_rx_id(Exam *exam);
 
 struct tm *get_exam_time(Exam *exam);
 
+int get_last_exam_id();
+
 #endif // EXAM_H
