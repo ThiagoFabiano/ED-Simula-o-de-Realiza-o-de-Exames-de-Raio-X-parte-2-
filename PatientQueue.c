@@ -5,7 +5,7 @@
 #include <time.h>
 #include "patient.h"
 
-  
+
 
 //Criar fila
 Queue* create_queue_patient()
@@ -75,4 +75,12 @@ void q_print_patient(Queue *q) {
              node->patient->id, node->patient->name, time_buffer); 
    }
    printf("\n");
+}
+
+int quantidade_pacientes(Queue *q) {
+   int count = 0;
+   for (QueueNode *node = q->inicio; node != NULL; node = node->next) {
+      count++;
+   }
+   return count;
 }

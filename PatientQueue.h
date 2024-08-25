@@ -35,4 +35,6 @@ Patient* q_dequeue_patient(Queue *q);
 
 void q_print_patient(Queue *q);
 
+int quantidade_pacientes(Queue *q);
+
 #endif
