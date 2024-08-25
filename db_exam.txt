@@ -5572,3 +5572,15 @@ ID do paciente: 929
 Diagnóstico da IA: Câncer de pulmao
 Horário do exame: Sun Aug 25 10:58:22 2024
 -------------------------
+ID do exame: 930
+ID da máquina: 1
+ID do paciente: 930
+Diagnóstico da IA: Saude Normal
+Horário do exame: Sun Aug 25 10:58:26 2024
+-------------------------
+ID do exame: 931
+ID da máquina: 1
+ID do paciente: 931
+Diagnóstico da IA: Saude Normal
+Horário do exame: Sun Aug 25 10:58:27 2024
+-------------------------
