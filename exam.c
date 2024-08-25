@@ -5,6 +5,8 @@
 #include <string.h>
 #include <time.h>
 
+static int id_exam = 1;
+
 typedef struct exam {
   int id;
   int id_rx;
@@ -26,7 +28,7 @@ Exam *realizar_exame(int id_rx, int patient_id) {
 
   IADiagnostico(&condition_IA, &nivel_gravidade);
 
-  exame->id = rand();
+  exame->id = id_exam++;
   exame->id_rx = id_rx;
   exame->patient_id = patient_id;
   exame->condition_IA = condition_IA;
