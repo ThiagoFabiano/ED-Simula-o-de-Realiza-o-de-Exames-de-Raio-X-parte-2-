@@ -77,10 +77,11 @@ Exames são realizados por uma máquina, e os resultados são enfileirados em um
 
 O programa simula a chegada de pacientes e a realização de exames ao longo do tempo.
 Relatórios periódicos são gerados para fornecer informações sobre o número de pacientes, exames realizados e a porcentagem de exames que geraram laudos.
-Arquivos de Dados
+
+<b>Arquivos de Dados</b>
 
 Dados de pacientes e exames são salvos em arquivos de texto (db_patient.txt e db_exam.txt, respectivamente) para persistência.
 Tratamento de Erros
 
-Erros na alocação de memória e na abertura de arquivos são tratados com mensagens apropriadas e liberação de recursos.
-Para qualquer dúvida ou problema, por favor, consulte a documentação do código ou entre em contato com o mantenedor do projeto.
+<hr>
+Grupo: Thiago Fabiano e Livia Hombre
