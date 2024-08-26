@@ -24,7 +24,7 @@ Paciente_Maquina alocar_paciente(MachineManager* gerenciador, Queue* patientQueu
     for (int i=0; i<TOTAL_MAQUINAS; i++) 
         {
           if(gerenciador->status_maquina[i] == 0)
-          { // ADICIONADO
+          { 
             Patient* patient = q_dequeue_patient(patientQueue);
             gerenciador->status_maquina[i] = 1;
             gerenciador->paciente_maquina[i] = patient;
@@ -32,7 +32,7 @@ Paciente_Maquina alocar_paciente(MachineManager* gerenciador, Queue* patientQueu
 
             estrutura.maquina_id = gerenciador->id_maquina[i];
             estrutura.paciente_id = patient->id;
-             printf("Alocou na maquina %d\n", i); 
+  
             return estrutura;
           }
         }
@@ -49,7 +49,7 @@ void liberar_maquina(MachineManager* gerenciador, int tempoSimulacao, QueueExam*
       enqueue_exam(filaDeExamesPorPrioridade, exame, tempoSimulacao);
       gerenciador->status_maquina[i] = 0;
       gerenciador->paciente_maquina[i] = NULL;
-      printf("Desalocou na maquina %d\n", i);
+
 
       break;  
     }

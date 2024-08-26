@@ -1,6 +1,0 @@
-ID do Laudo: 9
-ID do Exame: 116
-ID do Paciente: 116
-Condição Final: Câncer de pulmao
-Horário do Laudo: Sun Aug 25 20:15:53 2024
--------------------------

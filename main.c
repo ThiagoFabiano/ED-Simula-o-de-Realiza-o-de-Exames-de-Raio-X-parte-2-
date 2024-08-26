@@ -22,17 +22,14 @@ void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* 
     probabilidade = rand() % 100;
     
 
-    if(probabilidade < 101){
-        printf("CHAMOU\n");
+    if(probabilidade < 20){
         sprintf(nomePaciente, "Maria %d", *id);
         timestamp = *localtime(&t);
         Patient* paciente = create_patient(*id, nomePaciente, &timestamp); 
         enqueue_patient(filaDePacientes, paciente);         
         (*id)++;
         
-    } else {
-        printf("Nao chama paciente\n"); 
-    };
+    } 
 
 }
 
@@ -47,7 +44,6 @@ void realizarExames(MachineManager* gerenciadorDeMaquinas, Queue* filaDePaciente
 
 void realizarLaudos(QueueExam* filaDeExamesPorPrioridade, int tempoSimulacao){
     Report* laudo = criar_laudo(filaDeExamesPorPrioridade, tempoSimulacao);
-    printf("Fianlizou o laudo\n"); 
 }
 
 int main() {
@@ -66,7 +62,6 @@ int main() {
     
     //Loop para criar a fila de pacientes
     while (1) {  
-        printf("%d\n",tempoSimulacao);
         enfileirarPacientes(probabilidade, nomePaciente, &id, filaDePacientes);
 
         realizarExames(gerenciadorDeMaquinas, filaDePacientes, filaDeExamesPorPrioridade,  tempoSimulacao);
@@ -75,8 +70,6 @@ int main() {
             tempoQueExecutouOUltimoLaudo = tempoSimulacao;
             realizarLaudos(filaDeExamesPorPrioridade, tempoSimulacao);
         } 
-        printf("ultimo laudo %d\n", get_last_laudo_id());
-        printf("ultimo exame %d\n", get_last_exam_id());
 
         if((tempoSimulacao % TEMPO_RELATORIO == 0) && (tempoSimulacao > 1)){
             
