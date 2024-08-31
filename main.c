@@ -11,7 +11,7 @@
 #include "ExamPriorityQueue.h"
 #include "report.h"
 
-#define UNIDADE_DE_TEMPO 1
+#define UNIDADE_DE_TEMPO 1 //milisegundo
 #define TEMPO_LAUDO 30
 #define TEMPO_RELATORIO 100
 #define TEMPO_LIMITE 7200
@@ -91,7 +91,7 @@ int main() {
 
         tempoSimulacao += UNIDADE_DE_TEMPO;
         
-        sleep(UNIDADE_DE_TEMPO);  
+        usleep(UNIDADE_DE_TEMPO);  //milisegundo
     };
 
     return 0;
