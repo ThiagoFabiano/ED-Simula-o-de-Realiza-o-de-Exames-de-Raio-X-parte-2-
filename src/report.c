@@ -19,8 +19,9 @@ const char* determinar_condicao(Exam *exame)
     else 
     {
         const char *condicao_medico;
+        int nivel_gravidade_temporario;
         do {
-            IADiagnostico(&condicao_medico, NULL);  
+            IADiagnostico(&condicao_medico, &nivel_gravidade_temporario); 
         } while (condicao_medico == exame->condition_IA);  
 
         return condicao_medico;
