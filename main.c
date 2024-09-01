@@ -15,7 +15,7 @@
 #define TEMPO_LAUDO 30
 #define TEMPO_RELATORIO 100
 #define TEMPO_LIMITE 7200
-#define TEMPO_TOTAL_SIMULACAO
+#define TEMPO_TOTAL_SIMULACAO 43200
 
 void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* filaDePacientes){
     struct tm timestamp;
