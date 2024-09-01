@@ -5,8 +5,8 @@
 #include <time.h>
 #include "exam.h"
 
-int tempo_que_o_primeiro_entrou_na_fila = 0;
-int tempo_que_ultimo_entrou_na_fila = 0;
+static int total_tempo_na_fila = 0;
+static int total_exames = 0;
 
 //Criar fila
 QueueExam* create_queue_exam()
@@ -36,15 +36,12 @@ int q_is_empty_exam(QueueExam *q)
 }
 
 //Adicionar exame na fila
-Exam* enqueue_exam(QueueExam *q, Exam *e, int tempoSimulacao)
-{
-  QueueNodeExam *node = (QueueNodeExam *)malloc(sizeof(QueueNodeExam)); // aloca a memoria para o no de um exame
-   node->exam = e;
+Exam* enqueue_exam(QueueExam *q, Exam *e, int tempoSimulacao) {
+   QueueNodeExam *node = (QueueNodeExam *)malloc(sizeof(QueueNodeExam));
+    node->exam = e;
    node->next = NULL;
 
-   if(tempo_que_o_primeiro_entrou_na_fila == 0){
-      tempo_que_o_primeiro_entrou_na_fila = tempoSimulacao;
-   };
+   e->tempo_entrada_na_fila = tempoSimulacao;
 
    if (q->inicio == NULL || q->inicio->exam->nivel_gravidade < e->nivel_gravidade) 
    {
@@ -67,9 +64,8 @@ Exam* enqueue_exam(QueueExam *q, Exam *e, int tempoSimulacao)
 }
 
 //Remove e retorna o primeiro exame da fila
-Exam* dequeue_exam(QueueExam *q,  int tempoSimulacao)
-{
-   if (q_is_empty_exam(q)) {
+Exam* dequeue_exam(QueueExam *q, int tempoSimulacao) {
+    if (q_is_empty_exam(q)) {
         return NULL;
     }
 
@@ -83,11 +79,13 @@ Exam* dequeue_exam(QueueExam *q,  int tempoSimulacao)
     }
     free(prioridade);
 
-    tempo_que_ultimo_entrou_na_fila =  tempoSimulacao;
+    // Calculo pro relatorio
+    int tempo_na_fila = tempoSimulacao - exam->tempo_entrada_na_fila;
+    total_tempo_na_fila += tempo_na_fila;
+    total_exames++;
 
     return exam;
 }
-
 
 void q_print_exam(QueueExam *q) {
     for (QueueNodeExam *node = q->inicio; node != NULL; node = node->next) {
@@ -101,6 +99,11 @@ void q_print_exam(QueueExam *q) {
     printf("\n");
 }
 
-int get_time_first_to_last(){
-   return tempo_que_ultimo_entrou_na_fila - tempo_que_o_primeiro_entrou_na_fila;
-};
+
+float calcular_tempo_medio_na_fila() {
+    if (total_exames == 0) 
+    {
+       return 0.0f;
+    }
+    return (float)total_tempo_na_fila / total_exames;
+}
