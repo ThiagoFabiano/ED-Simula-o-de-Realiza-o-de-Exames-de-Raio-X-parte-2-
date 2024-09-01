@@ -11,6 +11,7 @@ typedef struct exam {
   const char *condition_IA;
   int nivel_gravidade;
   struct tm timestamp;
+  int tempo_entrada_na_fila;
 } Exam;
 
 Exam *realizar_exame(int id_rx, int patient_id);
