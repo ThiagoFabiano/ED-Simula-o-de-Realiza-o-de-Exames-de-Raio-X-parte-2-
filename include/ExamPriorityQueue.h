@@ -31,4 +31,6 @@ void q_print_exam(QueueExam *q);
 
 int get_time_first_to_last();
 
+float calcular_tempo_medio_na_fila();
+
 #endif
