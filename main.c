@@ -21,7 +21,7 @@ void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* 
     struct tm timestamp;
     time_t t = time(NULL);
     probabilidade = rand() % 100;
-    
+
 
     if(probabilidade < 20){
         sprintf(nomePaciente, "Maria %d", *id);
@@ -29,7 +29,7 @@ void enfileirarPacientes(int probabilidade, char *nomePaciente, int *id, Queue* 
         Patient* paciente = create_patient(*id, nomePaciente, &timestamp); 
         enqueue_patient(filaDePacientes, paciente);         
         (*id)++;
-        
+
     } 
 
 }
@@ -40,7 +40,7 @@ void realizarExames(MachineManager* gerenciadorDeMaquinas, Queue* filaDePaciente
     }
 
     liberar_maquina(gerenciadorDeMaquinas, tempoSimulacao, filaDeExamesPorPrioridade); // ADICIONAR COMO PARAMETRO ESSES TREM DEBAIXO E COLOCAR NO .H  
-    
+
 }
 
 void realizarLaudos(QueueExam* filaDeExamesPorPrioridade, int tempoSimulacao){
@@ -60,7 +60,7 @@ int main() {
     QueueExam* filaDeExamesPorPrioridade = create_queue_exam();
     MachineManager* gerenciadorDeMaquinas = criar_XRManager();
     char nomePaciente[50];
-    
+
     //Loop para criar a fila de pacientes
     while (tempoSimulacao <= TEMPO_TOTAL_SIMULACAO) {  
         enfileirarPacientes(probabilidade, nomePaciente, &id, filaDePacientes);
@@ -73,24 +73,24 @@ int main() {
         } 
 
         if((tempoSimulacao % TEMPO_RELATORIO == 0) && (tempoSimulacao > 1)){
-            
+
             printf("Relatorio:\n");
             printf("Numero de pacientes que visitaram o hospital: %d\n", id);
             printf("Numero pacientes na fila aguardando exame: %d\n", quantidade_pacientes(filaDePacientes));
             printf("Numero de pacientes que ja realizaram exame: %d\n", get_last_exam_id() - 1);
             printf("Porcentagem de pacientes que fizeram exames e recebeu o laudo: %.2f%%\n", ((get_last_laudo_id() / (float)get_last_exam_id()) * 100));
-            printf("Tempo medio de laudo: tempo medio que os exames ocupam a fila de prioridades: %d\n", get_time_first_to_last() / get_last_laudo_id());
+            printf("Tempo medio de laudo: tempo medio que os exames ocupam a fila de prioridades: %.2f\n", calcular_tempo_medio_na_fila());
         } 
 
         if((tempoSimulacao % TEMPO_LIMITE == 0) && (tempoSimulacao > 1)){
-            
+
             printf("Relatorio:\n");
             printf("Numero de exames realizados após o limite de tempo estabelecido: %d\n", get_last_exam_id() - 1);
         } 
 
 
         tempoSimulacao += UNIDADE_DE_TEMPO;
-        
+
         usleep(UNIDADE_DE_TEMPO);  //milisegundo
     };
 
