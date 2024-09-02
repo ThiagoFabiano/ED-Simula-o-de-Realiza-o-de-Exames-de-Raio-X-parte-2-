@@ -78,7 +78,7 @@ int *get_exam_time(Exam *exam) {
   if (exam == NULL) {
     return NULL;
   }
-  return &(exam->timestamp);
+  return exam->timestamp;
 }
 
 int get_last_exam_id(){

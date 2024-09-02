@@ -10,11 +10,7 @@ typedef struct exam {
   int patient_id;
   const char *condition_IA;
   int nivel_gravidade;
-<<<<<<< HEAD
   int timestamp;
-=======
-  struct tm timestamp;
->>>>>>> 9690c827d9850fbc4d2009d877f33560e52f1555
   int tempo_entrada_na_fila;
 } Exam;
 

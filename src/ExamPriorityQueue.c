@@ -79,12 +79,8 @@ Exam* dequeue_exam(QueueExam *q, int tempoSimulacao) {
     }
     free(prioridade);
 
-<<<<<<< HEAD
-   int tempo_na_fila = tempoSimulacao - exam->tempo_entrada_na_fila;
-=======
     // Calculo pro relatorio
     int tempo_na_fila = tempoSimulacao - exam->tempo_entrada_na_fila;
->>>>>>> 9690c827d9850fbc4d2009d877f33560e52f1555
     total_tempo_na_fila += tempo_na_fila;
     total_exames++;
 
@@ -103,10 +99,6 @@ void q_print_exam(QueueExam *q) {
     printf("\n");
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9690c827d9850fbc4d2009d877f33560e52f1555
 float calcular_tempo_medio_na_fila() {
     if (total_exames == 0) 
     {
