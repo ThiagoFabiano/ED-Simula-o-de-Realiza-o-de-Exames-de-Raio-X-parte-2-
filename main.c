@@ -67,7 +67,6 @@ int main() {
     
     //Loop para criar a fila de pacientes
     while (tempoSimulacao <= TEMPO_TOTAL_SIMULACAO){  
-        printf("%d\n",tempoSimulacao);
         enfileirarPacientes(probabilidade, nomePaciente, &id, filaDePacientes);
 
         realizarExames(gerenciadorDeMaquinas, filaDePacientes, filaDeExamesPorPrioridade,  tempoSimulacao);
@@ -108,7 +107,7 @@ int main() {
 
         tempoSimulacao += UNIDADE_DE_TEMPO;
 
-        usleep(UNIDADE_DE_TEMPO);  //milisegundo
+        sleep(UNIDADE_DE_TEMPO);  //milisegundo
     };
 
     return 0;
