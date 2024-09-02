@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
+#include <string.h>
 #include "exam.h"
 #include "PatientQueue.h"
 #include "patient.h"
@@ -10,6 +11,7 @@
 #include "IA.h"
 #include "ExamPriorityQueue.h"
 #include "report.h"
+#include "laudoPorCondicao.h"
 
 #define UNIDADE_DE_TEMPO 1 //milisegundo
 #define TEMPO_LAUDO 30
@@ -39,12 +41,12 @@ void realizarExames(MachineManager* gerenciadorDeMaquinas, Queue* filaDePaciente
         Paciente_Maquina pacienteMaquina = alocar_paciente(gerenciadorDeMaquinas, filaDePacientes, tempoSimulacao);
     }
 
-    liberar_maquina(gerenciadorDeMaquinas, tempoSimulacao, filaDeExamesPorPrioridade); // ADICIONAR COMO PARAMETRO ESSES TREM DEBAIXO E COLOCAR NO .H  
-
+    liberar_maquina(gerenciadorDeMaquinas, tempoSimulacao, filaDeExamesPorPrioridade); 
+    
 }
 
-void realizarLaudos(QueueExam* filaDeExamesPorPrioridade, int tempoSimulacao){
-    Report* laudo = criar_laudo(filaDeExamesPorPrioridade, tempoSimulacao);
+void realizarLaudos(QueueExam* filaDeExamesPorPrioridade, int tempoSimulacao, Exam *exame){
+    Report* laudo = criar_laudo(filaDeExamesPorPrioridade, tempoSimulacao, exame);
 }
 
 int main() {
@@ -56,22 +58,33 @@ int main() {
     int tempoSimulacao = 0;
     int tempoQueExecutouOUltimoLaudo = -1;
     int ultimoExameId = 0;
+    int medicoTerminouLaudo = 1;
     Queue* filaDePacientes = create_queue_patient();
     QueueExam* filaDeExamesPorPrioridade = create_queue_exam();
     MachineManager* gerenciadorDeMaquinas = criar_XRManager();
     char nomePaciente[50];
-
+    Exam *exame = NULL;
+    
     //Loop para criar a fila de pacientes
-    while (tempoSimulacao <= TEMPO_TOTAL_SIMULACAO) {  
+    while (tempoSimulacao <= TEMPO_TOTAL_SIMULACAO){  
+        printf("%d\n",tempoSimulacao);
         enfileirarPacientes(probabilidade, nomePaciente, &id, filaDePacientes);
 
         realizarExames(gerenciadorDeMaquinas, filaDePacientes, filaDeExamesPorPrioridade,  tempoSimulacao);
 
-        if((!q_is_empty_exam(filaDeExamesPorPrioridade)) && (tempoSimulacao - tempoQueExecutouOUltimoLaudo >= TEMPO_LAUDO)){
+        if(medicoTerminouLaudo && (!q_is_empty_exam(filaDeExamesPorPrioridade))){
+            exame = dequeue_exam(filaDeExamesPorPrioridade, tempoSimulacao);
+            medicoTerminouLaudo = 0;
+        }
+        //Condição que verifica se passou 30 unidades de tempo para realizar o laudo
+        if((tempoSimulacao - tempoQueExecutouOUltimoLaudo >= TEMPO_LAUDO)){
             tempoQueExecutouOUltimoLaudo = tempoSimulacao;
-            realizarLaudos(filaDeExamesPorPrioridade, tempoSimulacao);
+            realizarLaudos(filaDeExamesPorPrioridade, tempoSimulacao, exame);
+            medicoTerminouLaudo = 1;
         } 
 
+
+    
         if((tempoSimulacao % TEMPO_RELATORIO == 0) && (tempoSimulacao > 1)){
 
             printf("Relatorio:\n");
@@ -80,13 +93,17 @@ int main() {
             printf("Numero de pacientes que ja realizaram exame: %d\n", get_last_exam_id() - 1);
             printf("Porcentagem de pacientes que fizeram exames e recebeu o laudo: %.2f%%\n", ((get_last_laudo_id() / (float)get_last_exam_id()) * 100));
             printf("Tempo medio de laudo: tempo medio que os exames ocupam a fila de prioridades: %.2f\n", calcular_tempo_medio_na_fila());
+            imprimirTempoMedioDeLaudoPorCondicao();
+            printf("---------------------------\n");
         } 
 
         if((tempoSimulacao % TEMPO_LIMITE == 0) && (tempoSimulacao > 1)){
 
             printf("Relatorio:\n");
-            printf("Numero de exames realizados após o limite de tempo estabelecido: %d\n", get_last_exam_id() - 1);
-        } 
+            printf("Numero de exames realizados apos o limite de tempo estabelecido: %d\n", get_last_exam_id() - 1);
+            printf("---------------------------\n");
+
+        }
 
 
         tempoSimulacao += UNIDADE_DE_TEMPO;
@@ -96,4 +113,3 @@ int main() {
 
     return 0;
 }
-
