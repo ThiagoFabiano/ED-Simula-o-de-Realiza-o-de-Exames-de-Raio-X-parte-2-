@@ -14,6 +14,7 @@ Após a compilação, você pode executar o arquivo main.c:
 
 ./main
 
+Ao rodar o código mais de uma vez, lembre-se de excluir os arquivos .txt, para não dar conflito nos relatórios
 <hr>
 
 <h2>Principais TADs</h2>
@@ -77,11 +78,12 @@ Exames são realizados por uma máquina, e os resultados são enfileirados em um
 
 O programa simula a chegada de pacientes e a realização de exames ao longo do tempo.
 Relatórios periódicos são gerados para fornecer informações sobre o número de pacientes, exames realizados e a porcentagem de exames que geraram laudos.
+Foi criado um arquivo unico para gerar o relatorio de tempo médio de laudo por condição. Nele existem funções que percorrem os os arquivos db_report.txt e db_exam.txt, 
+para apartir do exam_id e o timestamp fazer o calculo da média de tempo que cada condição permanece na fila de prioridade.
 
 <b>Arquivos de Dados</b>
 
 Dados de pacientes e exames são salvos em arquivos de texto (db_patient.txt e db_exam.txt, respectivamente) para persistência.
-Tratamento de Erros
 
 <hr>
 Grupo: Thiago Fabiano e Livia Hombre
