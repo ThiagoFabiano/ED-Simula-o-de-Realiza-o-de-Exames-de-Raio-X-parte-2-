@@ -28,8 +28,8 @@ const char* determinar_condicao(Exam *exame)
     }
 }
 
-Report* criar_laudo(QueueExam *fila_exames,int tempoSimulacao) {
-    Exam *exame = dequeue_exam(fila_exames, tempoSimulacao);
+Report* criar_laudo(QueueExam *fila_exames,int tempoSimulacao, Exam *exame) {
+   
 
     if (exame == NULL) {
         printf("Nenhum exame disponível na fila para a realização do laudo.\n");
@@ -46,7 +46,7 @@ Report* criar_laudo(QueueExam *fila_exames,int tempoSimulacao) {
     laudo->exam_id = exame->id;
     laudo->patient_id = exame->patient_id;
     laudo->condition = determinar_condicao(exame);
-    laudo->timestamp = exame->timestamp;
+    laudo->timestamp = tempoSimulacao;
 
     FILE *file = fopen("db_report.txt", "a");
     if (file == NULL) {
@@ -55,11 +55,10 @@ Report* criar_laudo(QueueExam *fila_exames,int tempoSimulacao) {
         return NULL;
     }
 
-    fprintf(file, "ID do Laudo: %d\n", laudo->id);
-    fprintf(file, "ID do Exame: %d\n", laudo->exam_id);
-    fprintf(file, "ID do Paciente: %d\n", laudo->patient_id);
-    fprintf(file, "Condição Final: %s\n", laudo->condition);
-    fprintf(file, "Horário do Laudo: %s", asctime(&(laudo->timestamp)));
+    fprintf(file, "id: %d\n", laudo->id);
+    fprintf(file, "exam_id: %d\n", laudo->exam_id);
+    fprintf(file, "condition: %s\n", laudo->condition);
+    fprintf(file, "timestamp: %d\n", laudo->timestamp);
     fprintf(file, "-------------------------\n");
     fclose(file);
 

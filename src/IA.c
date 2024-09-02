@@ -12,7 +12,7 @@ Doenca doencas[] = {
     {"Derrame pleural", 0.05, 4, 0},
     {"Fibrose pulmonar", 0.05, 5, 0},
     {"Tuberculose", 0.05, 5, 0},
-    {"Câncer de pulmao", 0.1, 6, 0}  
+    {"Cancer de pulmao", 0.1, 6, 0}  
 };
 
 const int num_doencas = sizeof(doencas) / sizeof(doencas[0]);

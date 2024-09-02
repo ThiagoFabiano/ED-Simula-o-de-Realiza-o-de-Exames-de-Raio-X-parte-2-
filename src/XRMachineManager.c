@@ -45,12 +45,10 @@ void liberar_maquina(MachineManager* gerenciador, int tempoSimulacao, QueueExam*
   for (int i=0; i<TOTAL_MAQUINAS; i++) 
   {
     if(gerenciador->status_maquina[i] == 1 && (tempoSimulacao - gerenciador->tempo_inicio_exame[i]) >= TEMPO_EXAME){
-      Exam *exame = realizar_exame(gerenciador->id_maquina[i], gerenciador->paciente_maquina[i]->id);
+      Exam *exame = realizar_exame(gerenciador->id_maquina[i], gerenciador->paciente_maquina[i]->id, tempoSimulacao);
       enqueue_exam(filaDeExamesPorPrioridade, exame, tempoSimulacao);
       gerenciador->status_maquina[i] = 0;
       gerenciador->paciente_maquina[i] = NULL;
-
-
       break;  
     }
   }

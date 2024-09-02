@@ -9,7 +9,7 @@ static int id_exam = 1;
 
 
 
-Exam *realizar_exame(int id_rx, int patient_id) {
+Exam *realizar_exame(int id_rx, int patient_id, int tempoSimulacao) {
   const char *condition_IA;
   int nivel_gravidade;
 
@@ -27,8 +27,7 @@ Exam *realizar_exame(int id_rx, int patient_id) {
   exame->condition_IA = condition_IA;
   exame->nivel_gravidade = nivel_gravidade;
 
-  time_t rawtime = time(NULL);
-  exame->timestamp = *localtime(&rawtime);
+  exame->timestamp = tempoSimulacao;
 
   FILE *file = fopen("db_exam.txt", "a");
   if (file == NULL) {
@@ -37,11 +36,11 @@ Exam *realizar_exame(int id_rx, int patient_id) {
     return NULL;
   } 
 
-  fprintf(file, "ID do exame: %d\n", exame->id);
-  fprintf(file, "ID da máquina: %d\n", exame->id_rx);
-  fprintf(file, "ID do paciente: %d\n", exame->patient_id);
-  fprintf(file, "Diagnóstico da IA: %s\n", exame->condition_IA);
-  fprintf(file, "Horário do exame: %s", asctime(&(exame->timestamp)));
+  fprintf(file, "id: %d\n", exame->id);
+  fprintf(file, "xr_id: %d\n", exame->id_rx);
+  fprintf(file, "patient_id: %d\n", exame->patient_id);
+  fprintf(file, "condition_IA: %s\n", exame->condition_IA);
+  fprintf(file, "timestamp: %d\n", exame->timestamp);
   fprintf(file, "-------------------------\n");
   fclose(file);
 
@@ -75,7 +74,7 @@ int get_exam_rx_id(Exam *exam) {
   return exam->id_rx;
 }
 
-struct tm *get_exam_time(Exam *exam) {
+int *get_exam_time(Exam *exam) {
   if (exam == NULL) {
     return NULL;
   }
