@@ -13,7 +13,7 @@
 #include "report.h"
 #include "laudoPorCondicao.h"
 
-#define UNIDADE_DE_TEMPO 1 //milisegundo
+#define UNIDADE_DE_TEMPO 1 
 #define TEMPO_LAUDO 30
 #define TEMPO_RELATORIO 100
 #define TEMPO_LIMITE 7200
@@ -107,7 +107,7 @@ int main() {
 
         tempoSimulacao += UNIDADE_DE_TEMPO;
 
-        sleep(UNIDADE_DE_TEMPO);  //milisegundo
+        sleep(UNIDADE_DE_TEMPO);  
     };
 
     return 0;
