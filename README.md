@@ -5,10 +5,11 @@ Este projeto é um sistema de simulação para gerenciamento de pacientes e exam
 Passo a Passo para Executar o Programa:
 
 Compilação:
+Certifique-se de ter o gcc e o make instalado, e que o gcc está adicionado ao PATH.
 Utilize o Makefile para compilar o programa. No terminal, navegue até o diretório do projeto e execute:
 
 make
-(caso esteja usando Windows e o mingw, execute: mingw32-make. Dessa forma que eu utilizei)
+(caso esteja usando Windows e o mingw, execute: mingw32-make.)
 
 Após a compilação, você pode executar o arquivo main.c:
 
@@ -86,4 +87,5 @@ para apartir do exam_id e o timestamp fazer o calculo da média de tempo que cad
 Dados de pacientes e exames são salvos em arquivos de texto (db_patient.txt e db_exam.txt, respectivamente) para persistência.
 
 <hr>
+Dica: para executar o programa mais rapidamente, altere no final do arquivo main de sleep(UNIDADE_DE_TEMPO); para usleep(UNIDADE_DE_TEMPO), dessa forma cada unidade de tempo terá um microssegundo.
 Grupo: Thiago Fabiano e Livia Hombre
